@@ -28,6 +28,14 @@
         .nav-link:hover {
             color: #ddd;
         }
+        #serverTime{
+            font-weight:bold;
+            color:dodgerblue;
+        }
+
+        #icon_clock{
+            padding-right: 8px;
+        }
 
     </style>
         <!-- Favicon-->
@@ -35,6 +43,8 @@
         <link rel="icon" type="image/x-icon" href="assets/bola.png" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css" />
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -45,10 +55,15 @@
             <img src="assets/bola.png" width="50" height="50" style="margin-right: 10px;" />
             <a class="navbar-brand" href="#!" style="font-size: 3em; font-weight: bold;">BetinGoal</a>
         </div>
-        <div class="d-flex">
-            <button class="btn btn-secondary mx-2 btn-lg flex-grow-1">Login</button>
-            <button class="btn btn-primary btn-lg flex-grow-1">Registrar</button>
-        </div>
+<div class="d-flex mt-3 align-items-center">
+    <i id="icon_clock" class="fa-regular fa-clock" style="color: #ffffff;"></i> <label class="text-white me-2">Server Time:</label>
+    <div id="serverTime"></div>
+    <button class="btn btn-secondary mx-2 btn-lg flex-grow-1 ms-5">Login</button>
+    <!-- Adiciona "align-self-center" para centralizar verticalmente relativamente aos outros elementos -->
+    <div class="align-self-center">
+        <button class="btn btn-primary btn-lg flex-grow-1">Registrar</button>
+    </div>
+</div>
     </div>
 </nav>
 
@@ -132,6 +147,24 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- JavaScript para a hora do servidor -->
+        <script>
+            function updateServerTime() {
+                var serverTimeElement = document.getElementById('serverTime');
+                var serverTime = new Date();
+                var hours = serverTime.getHours();
+                var minutes = serverTime.getMinutes();
+                var seconds = serverTime.getSeconds();
+
+                var formattedTime = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+
+                serverTimeElement.textContent = formattedTime;
+
+                setTimeout(updateServerTime, 1000);
+            }
+
+            updateServerTime();
+        </script>
     </form>
 </body>
 </html>
