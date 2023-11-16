@@ -10,6 +10,10 @@
         <meta name="author" content="" />
         <title>BetinGoal</title>
     <style>
+        body{
+            background-image: url('imagens/versaogrande.jpg'); /* Substitua pelo caminho da sua imagem */
+            background-repeat: repeat; /* Isso fará com que a imagem se repita */
+        }
         .bola{
             margin-top:10px;
             margin-bottom:10px;
@@ -35,6 +39,22 @@
 
         #icon_clock{
             padding-right: 8px;
+        }
+
+        #meuCarrossel {
+            width: 100%;
+            max-width: none;
+            height: 600px;
+        }  
+        .card-body {
+            background-color: rgba(255, 255, 255, 0.25); /* Cor branca com 25% de opacidade */
+        }
+        .card-body.bg-light {
+            background-color: rgba(255, 255, 255, 0.25); /* Cor branca com 25% de opacidade */
+        }
+        .mark{
+            background-color:blue;
+          
         }
 
     </style>
@@ -92,22 +112,75 @@
     </div>
 </nav>
 
+        <!--Carrossel-->
+
+        <div id="meuCarrossel" class="carousel slide w-100 h-700" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="imagens/imagem 1920x600.jpg" alt="Imagem 1" class="w-100"/>
+        </div>
+        <div class="carousel-item">
+            <img src="imagens/imagem 1920x600.jpg" alt="Imagem 2" class="w-100"/>
+        </div>
+        <div class="carousel-item">
+            <img src="imagens/imagem 1920x600.jpg" alt="Imagem 3" class="w-100"/>
+        </div>
+    </div>
+        <a class="carousel-control-prev" href="#meuCarrossel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#meuCarrossel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+</div>
 
         <!-- Page Content-->
         <div class="container px-4 px-lg-5">
             <!-- Heading Row-->
-            <div class="row gx-4 gx-lg-5 align-items-center my-5">
-                <div class="col-lg-5">
-                    <h1 class="font-weight-light">Business Name or Tagline</h1>
-                    <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-                    <a class="btn btn-primary" href="#!">Call to Action!</a>
+
+            
+        <!--Info Client System-->
+        <div class="text-center py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card-body p-4">
+                     <i class="fa-solid fa-sheet-plastic fa-2xl"></i>
+                     <p><p><b>TOTAL DE PROGNÓSTICOS:</b></p></p>
+                     <asp:Label ID="lbl_quantidade_prognosticos" runat="server" Text="0" Font-Bold="True" Font-Size="XX-Large" ForeColor="DodgerBlue"></asp:Label>
                 </div>
-                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="imagens/imagem%201920x600.jpg" /></div>
             </div>
+            <div class="col-md-4 mb-4">
+                <div class="card-body p-4">
+                    <i class="fa-solid fa-people-group fa-2xl"></i>
+                    <p><p><b>TOTAL DE UTILIZADORES:</b></p></p>
+                    <asp:Label ID="lbl_total_users" runat="server" Text="0" Font-Bold="True" Font-Size="XX-Large" ForeColor="DodgerBlue"></asp:Label>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card-body p-4">
+                    <i class="fa-regular fa-address-card fa-2xl"></i>
+                    <p><p><b>UTILIZADORES REGISTADOS HOJE:</b></p></p>
+                    <asp:Label ID="lbl_novos_users_dia" runat="server" Text="0" Font-Bold="True" Font-Size="XX-Large" ForeColor="DodgerBlue"></asp:Label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
             <!-- Call to Action-->
-            <div class="card text-white bg-secondary my-5 py-4 text-center">
-                <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
-            </div>
+            <div class="card text-white bg-light my-5 py-4 text-center">
+    <div class="card-body">
+        <h1 class="text-black mb-4">Junta-te à comunidade <b>BetinGoal</b> e torna-te um vencedor no mundo do futebol!</h1>
+        <div class="align-items-center">
+            <button class="btn btn-secondary btn-lg flex-grow-1">Login</button>
+            <button class="btn btn-primary btn-lg flex-grow-1">Registrar</button>
+        </div>
+    </div>
+</div>
+
             <!-- Content Row-->
             <div class="row gx-4 gx-lg-5">
                 <div class="col-md-4 mb-5">
@@ -167,4 +240,9 @@
         </script>
     </form>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </html>
