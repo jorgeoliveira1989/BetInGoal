@@ -2131,8 +2131,14 @@
     <Content Include="fontawesome\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\svgs\solid\z.svg" />
     <Content Include="imagens\background_site.jpg" />
+    <Content Include="imagens\BET1.png" />
     <Content Include="imagens\BetinGoal.jpg" />
+    <Content Include="imagens\icon1.jpg" />
+    <Content Include="imagens\icon2.png" />
+    <Content Include="imagens\icon3.png" />
     <Content Include="imagens\imagem 1920x600.jpg" />
+    <Content Include="imagens\imagem 1920x600_HOMEM.jpg" />
+    <Content Include="imagens\imagem 1920x600_MULHER.jpg" />
     <Content Include="imagens\versaogrande.jpg" />
     <Content Include="index.aspx" />
     <Content Include="js\scripts.js" />
