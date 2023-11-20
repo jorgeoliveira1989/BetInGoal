@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace BetInGoal
 {
-    public partial class index : System.Web.UI.Page
+    public partial class menu_cliente : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,11 +20,6 @@ namespace BetInGoal
         }
 
         protected void btn_criar_conta_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("criarconta.aspx");
-        }
-
-        protected void btn_criar_conta1_Click(object sender, EventArgs e)
         {
             Response.Redirect("criarconta.aspx");
         }

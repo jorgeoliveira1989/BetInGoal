@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\bola.png" />
+    <Content Include="classGeral.aspx" />
+    <Content Include="criarconta.aspx" />
     <Content Include="css\styles.css" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
@@ -2142,9 +2144,27 @@
     <Content Include="imagens\versaogrande.jpg" />
     <Content Include="index.aspx" />
     <Content Include="js\scripts.js" />
+    <Content Include="entrar.aspx" />
+    <Content Include="noticias.aspx" />
+    <Content Include="recuperarpasse.aspx" />
+    <Content Include="suporte.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classGeral.aspx.cs">
+      <DependentUpon>classGeral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="classGeral.aspx.designer.cs">
+      <DependentUpon>classGeral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="criarconta.aspx.cs">
+      <DependentUpon>criarconta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="criarconta.aspx.designer.cs">
+      <DependentUpon>criarconta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2152,7 +2172,42 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="entrar.aspx.cs">
+      <DependentUpon>entrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="entrar.aspx.designer.cs">
+      <DependentUpon>entrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu_cliente.Master.cs">
+      <DependentUpon>menu_cliente.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu_cliente.Master.designer.cs">
+      <DependentUpon>menu_cliente.Master</DependentUpon>
+    </Compile>
+    <Compile Include="noticias.aspx.cs">
+      <DependentUpon>noticias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="noticias.aspx.designer.cs">
+      <DependentUpon>noticias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recuperarpasse.aspx.cs">
+      <DependentUpon>recuperarpasse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recuperarpasse.aspx.designer.cs">
+      <DependentUpon>recuperarpasse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="suporte.aspx.cs">
+      <DependentUpon>suporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suporte.aspx.designer.cs">
+      <DependentUpon>suporte.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fontawesome\less\brands.less" />
@@ -2208,6 +2263,7 @@
     <Content Include="fontawesome\webfonts\fa-solid-900.woff2" />
     <Content Include="fontawesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="fontawesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="menu_cliente.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

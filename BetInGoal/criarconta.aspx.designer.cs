@@ -11,26 +11,62 @@ namespace BetInGoal
 {
 
 
-    public partial class index
+    public partial class criarconta
     {
 
         /// <summary>
-        /// form1 control.
+        /// txt_nome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox txt_nome;
 
         /// <summary>
-        /// btn_entrar control.
+        /// txt_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_entrar;
+        protected global::System.Web.UI.WebControls.TextBox txt_email;
+
+        /// <summary>
+        /// txt_datanascimento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_datanascimento;
+
+        /// <summary>
+        /// txt_utilizador control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_utilizador;
+
+        /// <summary>
+        /// txt_passe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_passe;
+
+        /// <summary>
+        /// txt_confpasse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_confpasse;
 
         /// <summary>
         /// btn_criar_conta control.
@@ -42,39 +78,12 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.Button btn_criar_conta;
 
         /// <summary>
-        /// lbl_quantidade_prognosticos control.
+        /// lbl_info control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_quantidade_prognosticos;
-
-        /// <summary>
-        /// lbl_total_users control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_total_users;
-
-        /// <summary>
-        /// lbl_novos_users_dia control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_novos_users_dia;
-
-        /// <summary>
-        /// btn_criar_conta1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_criar_conta1;
+        protected global::System.Web.UI.WebControls.Label lbl_info;
     }
 }

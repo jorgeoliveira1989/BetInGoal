@@ -12,8 +12,8 @@
     <style>
         body {
             height: 100%;
-            background-image: url('imagens/versaogrande.jpg'); /* Substitua pelo caminho da sua imagem */
-            background-repeat: repeat; /* Isso fará com que a imagem se repita */
+            background-image: url('imagens/versaogrande.jpg');
+            background-repeat: repeat; /* Isto faz  a imagem repetir */
         }
 
         .bola {
@@ -55,9 +55,9 @@
             background-color: rgba(255, 255, 255, 0.25); /* Cor branca com 25% de opacidade */
         }
 
-            .card-body.bg-light {
-                background-color: rgba(255, 255, 255, 0.25); /* Cor branca com 25% de opacidade */
-            }
+        .card-body.bg-light {
+            background-color: rgba(255, 255, 255, 0.25); /* Cor branca com 25% de opacidade */
+        }
 
         .mark {
             background-color: blue;
@@ -87,10 +87,10 @@
                     <i id="icon_clock" class="fa-regular fa-clock" style="color: #ffffff;"></i>
                     <label class="text-white me-2">Server Time:</label>
                     <div id="serverTime"></div>
-                    <button class="btn btn-secondary mx-2 btn-lg flex-grow-1 ms-5">Login</button>
+                    <asp:Button ID="btn_entrar" class="btn btn-secondary mx-2 btn-lg flex-grow-1 ms-5" runat="server" Text="Entrar" OnClick="btn_entrar_Click" />
                     <!-- Adiciona "align-self-center" para centralizar verticalmente relativamente aos outros elementos -->
                     <div class="align-self-center">
-                        <button class="btn btn-primary btn-lg flex-grow-1">Registrar</button>
+                        <asp:Button ID="btn_criar_conta" class="btn btn-primary btn-lg flex-grow-1" runat="server" Text="Criar Conta" OnClick="btn_criar_conta_Click" />
                     </div>
                 </div>
             </div>
@@ -105,17 +105,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active fw-bold text-white fs-5 me-2" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><span class="separator">|</span></li>
                         <li class="nav-item"><a class="nav-link fw-bold text-white fs-5 me-2" href="#!">Prognósticos</a></li>
                         <li class="nav-item"><span class="separator">|</span></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5 me-2" href="#!">Classificação Geral</a></li>
+                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5 me-2" href="classGeral.aspx">Classificação Geral</a></li>
                         <li class="nav-item"><span class="separator">|</span></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="#!">Login</a></li>
+                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="noticias.aspx">Notícias</a></li>
                         <li class="nav-item"><span class="separator">|</span></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="#!">Notícias</a></li>
-                        <li class="nav-item"><span class="separator">|</span></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="#!">Suporte</a></li>
+                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="suporte.aspx">Suporte</a></li>
                     </ul>
                 </div>
             </div>
@@ -197,7 +193,7 @@
                         <h1 class="text-black mb-4">Junta-te à nossa comunidade <b>BetinGoal</b>.<br />
                         </h1>
                         <div class="align-items-center">
-                            <button class="btn btn-primary btn-lg flex-grow-1">Registrar</button>
+                            <asp:Button ID="btn_criar_conta1" class="btn btn-primary btn-lg flex-grow-1" runat="server" Text="Criar Conta" OnClick="btn_criar_conta1_Click" />
                         </div>
                     </div>
                 </div>

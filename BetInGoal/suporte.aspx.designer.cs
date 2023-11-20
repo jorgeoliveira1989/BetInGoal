@@ -11,70 +11,61 @@ namespace BetInGoal
 {
 
 
-    public partial class index
+    public partial class suporte
     {
 
         /// <summary>
-        /// form1 control.
+        /// txt_nome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox txt_nome;
 
         /// <summary>
-        /// btn_entrar control.
+        /// txt_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_entrar;
+        protected global::System.Web.UI.WebControls.TextBox txt_email;
 
         /// <summary>
-        /// btn_criar_conta control.
+        /// ddl_assunto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_criar_conta;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_assunto;
 
         /// <summary>
-        /// lbl_quantidade_prognosticos control.
+        /// txtMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_quantidade_prognosticos;
+        protected global::System.Web.UI.WebControls.TextBox txtMessage;
 
         /// <summary>
-        /// lbl_total_users control.
+        /// btn_submeter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_total_users;
+        protected global::System.Web.UI.WebControls.Button btn_submeter;
 
         /// <summary>
-        /// lbl_novos_users_dia control.
+        /// lbl_info control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_novos_users_dia;
-
-        /// <summary>
-        /// btn_criar_conta1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_criar_conta1;
+        protected global::System.Web.UI.WebControls.Label lbl_info;
     }
 }
