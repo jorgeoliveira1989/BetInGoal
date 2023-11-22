@@ -42,6 +42,24 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.Button btn_criar_conta;
 
         /// <summary>
+        /// btn_sair control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_sair;
+
+        /// <summary>
+        /// lbl_utilizador control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_utilizador;
+
+        /// <summary>
         /// lbl_quantidade_prognosticos control.
         /// </summary>
         /// <remarks>

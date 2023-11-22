@@ -11,7 +11,7 @@
           <div class="card p-6" style="background-color: #f8f9fa;">
               <div class="card-body">
         <div>
-            <h1 class="text-center">Suporte</h1>
+            <h1 class="text-center">SUPORTE</h1>
             <br />
             <div>
                 <asp:TextBox ID="txt_nome" class="form-control" runat="server" placeholder="Seu Nome" CssClass="form-control" /><br />

@@ -67,10 +67,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="aceitarupgrades.aspx" />
+    <Content Include="addjogo.aspx" />
+    <Content Include="administrador.aspx" />
     <Content Include="assets\bola.png" />
+    <Content Include="ativarclientes.aspx" />
+    <Content Include="backoffice.aspx" />
     <Content Include="classGeral.aspx" />
+    <Content Include="classificacaofree.aspx" />
+    <Content Include="classificacaopro.aspx" />
+    <Content Include="cliente.aspx" />
     <Content Include="criarconta.aspx" />
+    <Content Include="criarnoticia.aspx" />
     <Content Include="css\styles.css" />
+    <Content Include="desativarclientes.aspx" />
+    <Content Include="desativarnoticia.aspx" />
+    <Content Include="editarnoticia.aspx" />
+    <Content Include="fecharjogo.aspx" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
     <Content Include="fontawesome\css\brands.css" />
@@ -2135,6 +2148,7 @@
     <Content Include="imagens\background_site.jpg" />
     <Content Include="imagens\BET1.png" />
     <Content Include="imagens\BetinGoal.jpg" />
+    <Content Include="imagens\dados_pessoais.png" />
     <Content Include="imagens\icon1.jpg" />
     <Content Include="imagens\icon2.png" />
     <Content Include="imagens\icon3.png" />
@@ -2148,9 +2162,48 @@
     <Content Include="noticias.aspx" />
     <Content Include="recuperarpasse.aspx" />
     <Content Include="suporte.aspx" />
+    <Content Include="vermensagens.aspx" />
+    <Content Include="verupgrades.aspx" />
+    <Content Include="visualizarclientes.aspx" />
+    <Content Include="visualizarjogospassados.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aceitarupgrades.aspx.cs">
+      <DependentUpon>aceitarupgrades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aceitarupgrades.aspx.designer.cs">
+      <DependentUpon>aceitarupgrades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addjogo.aspx.cs">
+      <DependentUpon>addjogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addjogo.aspx.designer.cs">
+      <DependentUpon>addjogo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrador.aspx.cs">
+      <DependentUpon>administrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administrador.aspx.designer.cs">
+      <DependentUpon>administrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ativarclientes.aspx.cs">
+      <DependentUpon>ativarclientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ativarclientes.aspx.designer.cs">
+      <DependentUpon>ativarclientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backoffice.aspx.cs">
+      <DependentUpon>backoffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backoffice.aspx.designer.cs">
+      <DependentUpon>backoffice.aspx</DependentUpon>
+    </Compile>
     <Compile Include="classGeral.aspx.cs">
       <DependentUpon>classGeral.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2158,12 +2211,68 @@
     <Compile Include="classGeral.aspx.designer.cs">
       <DependentUpon>classGeral.aspx</DependentUpon>
     </Compile>
+    <Compile Include="classificacaofree.aspx.cs">
+      <DependentUpon>classificacaofree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="classificacaofree.aspx.designer.cs">
+      <DependentUpon>classificacaofree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="classificacaopro.aspx.cs">
+      <DependentUpon>classificacaopro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="classificacaopro.aspx.designer.cs">
+      <DependentUpon>classificacaopro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cliente.aspx.cs">
+      <DependentUpon>cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cliente.aspx.designer.cs">
+      <DependentUpon>cliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="criarconta.aspx.cs">
       <DependentUpon>criarconta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="criarconta.aspx.designer.cs">
       <DependentUpon>criarconta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="criarnoticia.aspx.cs">
+      <DependentUpon>criarnoticia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="criarnoticia.aspx.designer.cs">
+      <DependentUpon>criarnoticia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="desativarclientes.aspx.cs">
+      <DependentUpon>desativarclientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="desativarclientes.aspx.designer.cs">
+      <DependentUpon>desativarclientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="desativarnoticia.aspx.cs">
+      <DependentUpon>desativarnoticia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="desativarnoticia.aspx.designer.cs">
+      <DependentUpon>desativarnoticia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editarnoticia.aspx.cs">
+      <DependentUpon>editarnoticia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editarnoticia.aspx.designer.cs">
+      <DependentUpon>editarnoticia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fecharjogo.aspx.cs">
+      <DependentUpon>fecharjogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fecharjogo.aspx.designer.cs">
+      <DependentUpon>fecharjogo.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -2178,6 +2287,13 @@
     </Compile>
     <Compile Include="entrar.aspx.designer.cs">
       <DependentUpon>entrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu_admin.Master.cs">
+      <DependentUpon>menu_admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu_admin.Master.designer.cs">
+      <DependentUpon>menu_admin.Master</DependentUpon>
     </Compile>
     <Compile Include="menu_cliente.Master.cs">
       <DependentUpon>menu_cliente.Master</DependentUpon>
@@ -2207,6 +2323,34 @@
     </Compile>
     <Compile Include="suporte.aspx.designer.cs">
       <DependentUpon>suporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vermensagens.aspx.cs">
+      <DependentUpon>vermensagens.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vermensagens.aspx.designer.cs">
+      <DependentUpon>vermensagens.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verupgrades.aspx.cs">
+      <DependentUpon>verupgrades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verupgrades.aspx.designer.cs">
+      <DependentUpon>verupgrades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visualizarclientes.aspx.cs">
+      <DependentUpon>visualizarclientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visualizarclientes.aspx.designer.cs">
+      <DependentUpon>visualizarclientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visualizarjogospassados.aspx.cs">
+      <DependentUpon>visualizarjogospassados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="visualizarjogospassados.aspx.designer.cs">
+      <DependentUpon>visualizarjogospassados.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2264,6 +2408,7 @@
     <Content Include="fontawesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="fontawesome\webfonts\fa-v4compatibility.woff2" />
     <Content Include="menu_cliente.Master" />
+    <Content Include="menu_admin.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

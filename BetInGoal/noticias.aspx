@@ -7,9 +7,7 @@
  <br />
  <div class="container d-flex justify-content-center align-items-center">
  <div class="p-4 border rounded bg-light">
-     <br />
-     <br />
-     <h3>Notícias:</h3>
+     <h1>NOTÍCIAS</h1>
      <asp:Repeater ID="rpt_noticias" runat="server">
          <HeaderTemplate>
 

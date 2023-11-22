@@ -11,7 +11,7 @@ namespace BetInGoal
 {
 
 
-    public partial class menu_cliente
+    public partial class menu_admin
     {
 
         /// <summary>
@@ -33,33 +33,6 @@ namespace BetInGoal
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// btn_entrar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_entrar;
-
-        /// <summary>
-        /// btn_criar_conta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_criar_conta;
-
-        /// <summary>
-        /// btn_sair control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_sair;
-
-        /// <summary>
         /// lbl_utilizador control.
         /// </summary>
         /// <remarks>
@@ -69,13 +42,13 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.Label lbl_utilizador;
 
         /// <summary>
-        /// lb_sair control.
+        /// btn_sair control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lb_sair;
+        protected global::System.Web.UI.WebControls.Button btn_sair;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

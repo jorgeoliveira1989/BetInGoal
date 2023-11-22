@@ -9,9 +9,9 @@
     </asp:ContentPlaceHolder>
     <style>
      body {
-     height: 100%;
-     background-image: url('imagens/versaogrande.jpg');
-     background-repeat: repeat; /* Isto faz  a imagem repetir */
+        height: 100%;
+        background-image: url('imagens/versaogrande.jpg');
+        background-repeat: repeat; /* Isto faz  a imagem repetir */
      }
 
      .bola {
@@ -86,6 +86,7 @@
                     <!-- Adiciona "align-self-center" para centralizar verticalmente relativamente aos outros elementos -->
                     <div class="align-self-center">
                         <asp:Button ID="btn_criar_conta" class="btn btn-primary btn-lg flex-grow-1" runat="server" Text="Criar Conta" OnClick="btn_criar_conta_Click" />
+                        <asp:Button ID="btn_sair" class="btn btn-danger btn-lg flex-grow-1" runat="server" Text="Sair" />
                     </div>
                 </div>
             </div>
@@ -107,6 +108,23 @@
                         <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="noticias.aspx">Notícias</a></li>
                         <li class="nav-item"><span class="separator">|</span></li>
                         <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="suporte.aspx">Suporte</a></li>
+                        <li class="nav-item"><span class="separator">|</span></li>
+                        <li class="nav-item ml-2">
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" id="clientesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa-solid fa-user fa-xl ms-2 mr-2" style="color: #ffffff;"></i>
+                                    <asp:Label ID="lbl_utilizador" class="fw-bold text-white fs-5 ms-2" runat="server" Text="Nome"></asp:Label>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="clientesDropdown">
+                                    <a class="dropdown-item" href="cliente.aspx">Dados do Cliente</a>
+                                    <a class="dropdown-item" href="alterarpasse.aspx">Alterar Palavra-Passe</a>
+                                    <a class="dropdown-item" href="enviarprognostico.aspx">Enviar Prognóstico</a>
+                                    <a class="dropdown-item" href="comprarsubscricao.aspx">Comprar Subscrição</a>
+                                    <a class="dropdown-item" href="verclassificacao.aspx">Visualizar Classificação</a>
+                                    <asp:LinkButton ID="lb_sair" class="dropdown-item" runat="server" ForeColor="Red">Sair</asp:LinkButton>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>

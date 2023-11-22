@@ -7,7 +7,7 @@
     <br />
     <div class="container d-flex justify-content-center align-items-center">
     <div class="p-4 border rounded bg-light">
-        <h5>Ranking:</h5><asp:DropDownList ID="ddl_filtro" runat="server">
+        <h5>Ranking</h5><asp:DropDownList ID="ddl_filtro" runat="server">
         <asp:ListItem>------------</asp:ListItem>
         <asp:ListItem>TOP 100</asp:ListItem>
         <asp:ListItem>TOP 50</asp:ListItem>
@@ -17,7 +17,7 @@
             </asp:DropDownList>
         <br />
         <br />
-        <h3>CLASSIFICAÇÃO GERAL</h3>
+        <h1>CLASSIFICAÇÃO GERAL</h1>
         <asp:Repeater ID="rpt_classificacao" runat="server">
             <HeaderTemplate>
                  <table border="1" width="1000">
