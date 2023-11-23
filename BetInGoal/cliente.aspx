@@ -59,19 +59,27 @@
                     <div class="d-flex flex-column">
                         <p class="mb-1" style="font-size: 22px;">
                             <i class="fas fa-key"></i>
-                            <a href="#" style="text-decoration: none;">Alterar Palavra-Passe</a>
+                            <a href="alterarpasse.aspx" style="text-decoration: none;">Alterar Palavra-Passe</a>
                         </p>
                         <p class="mb-1" style="font-size: 22px;">
                             <i class="fas fa-envelope"></i>
-                            <a href="#" style="text-decoration: none;">Enviar Prognóstico</a>
+                            <a href="enviarprog.aspx" style="text-decoration: none;">Enviar Prognóstico</a>
                         </p>
                         <p class="mb-1" style="font-size: 22px;">
                             <i class="fas fa-shopping-cart"></i>
-                            <a href="#" style="text-decoration: none;">Comprar Subscrição</a>
+                            <a href="comprarsubscricao.aspx" style="text-decoration: none;">Comprar Subscrição</a>
                         </p>
                         <p class="mb-1" style="font-size: 22px;">
                             <i class="fas fa-trophy"></i>
                             <a href="classGeral.aspx" style="text-decoration: none;">Visualizar Classificação</a>
+                        </p>
+                        <p class="mb-1" style="font-size: 22px;">
+                            <i class="fas fa-users"></i>
+                            <a href="criarliga.aspx" style="text-decoration: none;">Criar Liga</a>
+                        </p>
+                        <p class="mb-1" style="font-size: 22px;">
+                            <i class="fas fa-plus-circle"></i>
+                            <a href="entrarliga.aspx" style="text-decoration: none;">Visualizar Ligas</a>
                         </p>
                         <!-- Adicione mais opções conforme necessário -->
                     </div>
@@ -95,6 +103,10 @@
                     <p class="mb-1" style="font-size: 22px;">
                         <strong>Estado da Conta:</strong>
                         <asp:Label ID="lbl_estado_conta" runat="server" Font-Bold="True" Text="dsfsdgdfgdgd" ForeColor="#FF9900"></asp:Label>
+                    </p>
+                    <p class="mb-1" style="font-size: 22px;">
+                        <strong>Nome da Liga:</strong>
+                        <asp:Label ID="lbl_liga" runat="server" Font-Bold="True" ForeColor="#FF9900" Text="XPTO"></asp:Label>
                     </p>
                     <!-- Adicione mais informações conforme necessário -->
                 </div>

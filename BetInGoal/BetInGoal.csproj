@@ -70,6 +70,7 @@
     <Content Include="aceitarupgrades.aspx" />
     <Content Include="addjogo.aspx" />
     <Content Include="administrador.aspx" />
+    <Content Include="alterarpasse.aspx" />
     <Content Include="assets\bola.png" />
     <Content Include="ativarclientes.aspx" />
     <Content Include="backoffice.aspx" />
@@ -77,12 +78,17 @@
     <Content Include="classificacaofree.aspx" />
     <Content Include="classificacaopro.aspx" />
     <Content Include="cliente.aspx" />
+    <Content Include="comprarsubscricao.aspx" />
     <Content Include="criarconta.aspx" />
+    <Content Include="criarliga.aspx" />
     <Content Include="criarnoticia.aspx" />
     <Content Include="css\styles.css" />
     <Content Include="desativarclientes.aspx" />
     <Content Include="desativarnoticia.aspx" />
     <Content Include="editarnoticia.aspx" />
+    <Content Include="entrarliga.aspx" />
+    <Content Include="enviarprog.aspx" />
+    <Content Include="enviarprognostico.aspx" />
     <Content Include="fecharjogo.aspx" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
@@ -2159,6 +2165,7 @@
     <Content Include="index.aspx" />
     <Content Include="js\scripts.js" />
     <Content Include="entrar.aspx" />
+    <Content Include="liga.aspx" />
     <Content Include="noticias.aspx" />
     <Content Include="recuperarpasse.aspx" />
     <Content Include="suporte.aspx" />
@@ -2189,6 +2196,13 @@
     </Compile>
     <Compile Include="administrador.aspx.designer.cs">
       <DependentUpon>administrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="alterarpasse.aspx.cs">
+      <DependentUpon>alterarpasse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="alterarpasse.aspx.designer.cs">
+      <DependentUpon>alterarpasse.aspx</DependentUpon>
     </Compile>
     <Compile Include="ativarclientes.aspx.cs">
       <DependentUpon>ativarclientes.aspx</DependentUpon>
@@ -2232,12 +2246,26 @@
     <Compile Include="cliente.aspx.designer.cs">
       <DependentUpon>cliente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="comprarsubscricao.aspx.cs">
+      <DependentUpon>comprarsubscricao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="comprarsubscricao.aspx.designer.cs">
+      <DependentUpon>comprarsubscricao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="criarconta.aspx.cs">
       <DependentUpon>criarconta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="criarconta.aspx.designer.cs">
       <DependentUpon>criarconta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="criarliga.aspx.cs">
+      <DependentUpon>criarliga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="criarliga.aspx.designer.cs">
+      <DependentUpon>criarliga.aspx</DependentUpon>
     </Compile>
     <Compile Include="criarnoticia.aspx.cs">
       <DependentUpon>criarnoticia.aspx</DependentUpon>
@@ -2267,6 +2295,27 @@
     <Compile Include="editarnoticia.aspx.designer.cs">
       <DependentUpon>editarnoticia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="entrarliga.aspx.cs">
+      <DependentUpon>entrarliga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="entrarliga.aspx.designer.cs">
+      <DependentUpon>entrarliga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="enviarprog.aspx.cs">
+      <DependentUpon>enviarprog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="enviarprog.aspx.designer.cs">
+      <DependentUpon>enviarprog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="enviarprognostico.aspx.cs">
+      <DependentUpon>enviarprognostico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="enviarprognostico.aspx.designer.cs">
+      <DependentUpon>enviarprognostico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="fecharjogo.aspx.cs">
       <DependentUpon>fecharjogo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2287,6 +2336,13 @@
     </Compile>
     <Compile Include="entrar.aspx.designer.cs">
       <DependentUpon>entrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="liga.aspx.cs">
+      <DependentUpon>liga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="liga.aspx.designer.cs">
+      <DependentUpon>liga.aspx</DependentUpon>
     </Compile>
     <Compile Include="menu_admin.Master.cs">
       <DependentUpon>menu_admin.Master</DependentUpon>

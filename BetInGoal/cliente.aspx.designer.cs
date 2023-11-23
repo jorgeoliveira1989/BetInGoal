@@ -69,6 +69,15 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.Label lbl_estado_conta;
 
         /// <summary>
+        /// lbl_liga control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_liga;
+
+        /// <summary>
         /// lbl_prognosticos_realizados control.
         /// </summary>
         /// <remarks>
