@@ -42,6 +42,24 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.Label lbl_tipo_conta;
 
         /// <summary>
+        /// lbl_alterar_passe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_alterar_passe;
+
+        /// <summary>
+        /// hl_alterar_passe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hl_alterar_passe;
+
+        /// <summary>
         /// lbl_nome_completo control.
         /// </summary>
         /// <remarks>

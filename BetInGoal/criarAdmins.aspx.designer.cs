@@ -11,35 +11,8 @@ namespace BetInGoal
 {
 
 
-    public partial class criarconta1
+    public partial class criarAdmins
     {
-
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// btn_entrar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_entrar;
-
-        /// <summary>
-        /// btn_criar_conta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_criar_conta;
 
         /// <summary>
         /// txt_nome control.
@@ -51,6 +24,15 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.TextBox txt_nome;
 
         /// <summary>
+        /// rfvNome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNome;
+
+        /// <summary>
         /// txt_email control.
         /// </summary>
         /// <remarks>
@@ -60,13 +42,22 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.TextBox txt_email;
 
         /// <summary>
-        /// txt_datanascimento control.
+        /// rfvEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_datanascimento;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
+
+        /// <summary>
+        /// revEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
 
         /// <summary>
         /// txt_utilizador control.
@@ -78,31 +69,67 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.TextBox txt_utilizador;
 
         /// <summary>
-        /// txt_passe control.
+        /// rfvUtilizador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_passe;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUtilizador;
 
         /// <summary>
-        /// txt_confpasse control.
+        /// txt_palavra_passe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_confpasse;
+        protected global::System.Web.UI.WebControls.TextBox txt_palavra_passe;
 
         /// <summary>
-        /// btn_criar_cliente control.
+        /// rfvPalavraPasse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_criar_cliente;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPalavraPasse;
+
+        /// <summary>
+        /// txt_conf_palavra_passe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_conf_palavra_passe;
+
+        /// <summary>
+        /// rfvConfPalavraPasse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvConfPalavraPasse;
+
+        /// <summary>
+        /// cvConfirmaPalavraPasse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvConfirmaPalavraPasse;
+
+        /// <summary>
+        /// btn_criar_conta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_criar_conta;
 
         /// <summary>
         /// lbl_info control.

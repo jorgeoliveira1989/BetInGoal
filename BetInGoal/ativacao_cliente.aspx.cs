@@ -4,60 +4,35 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Security.Cryptography;
 
 namespace BetInGoal
 {
-    public partial class administrador : System.Web.UI.Page
+    public partial class ativacao_cliente : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btn_login_Click(object sender, EventArgs e)
-        {
+            string utilizador = DecryptString(Request.QueryString["utilizador"]);
 
             SqlConnection myconn = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
 
             SqlCommand mycomm = new SqlCommand();
             mycomm.CommandType = CommandType.StoredProcedure;
-            mycomm.CommandText = "autenticacao_admin";
+            mycomm.CommandText = "ativacao_cliente";
 
             mycomm.Connection = myconn;
-            mycomm.Parameters.AddWithValue("@user", txt_user.Text);
-            mycomm.Parameters.AddWithValue("@passe", EncryptString(txt_passe.Text));
+            mycomm.Parameters.AddWithValue("@utilizador", utilizador);
 
-            SqlParameter valor = new SqlParameter();
-            valor.ParameterName = "@retorno";
-            valor.Direction = ParameterDirection.Output;
-            valor.SqlDbType = SqlDbType.Int;
-
-            mycomm.Parameters.Add(valor);
 
             myconn.Open();
             mycomm.ExecuteNonQuery();
 
-            int resposta = Convert.ToInt32(mycomm.Parameters["@retorno"].Value);
-
             myconn.Close();
-
-            if (resposta == 1)
-            {
-                Session["utilizador"] = txt_user.Text;
-                Response.Redirect("backoffice.aspx");
-
-            }
-            else if (resposta == 0)
-            {
-                lbl_info.Text = "Utilizador e/ou Password não existem!!!";
-            }
         }
-
-        public static string EncryptString(string Message)
+        public static string DecryptString(string Message)
         {
             string Passphrase = "cinel";
             byte[] Results;
@@ -81,7 +56,7 @@ namespace BetInGoal
 
 
 
-            // Step 3. Setup the encoder
+            // Step 3. Setup the decoder
             TDESAlgorithm.Key = TDESKey;
             TDESAlgorithm.Mode = CipherMode.ECB;
             TDESAlgorithm.Padding = PaddingMode.PKCS7;
@@ -89,15 +64,25 @@ namespace BetInGoal
 
 
             // Step 4. Convert the input string to a byte[]
-            byte[] DataToEncrypt = UTF8.GetBytes(Message);
 
 
 
-            // Step 5. Attempt to encrypt the string
+            Message = Message.Replace("KLKLK", "+");
+            Message = Message.Replace("JLJLJL", "/");
+            Message = Message.Replace("IOIOIO", "\\");
+
+
+
+
+            byte[] DataToDecrypt = Convert.FromBase64String(Message);
+
+
+
+            // Step 5. Attempt to decrypt the string
             try
             {
-                ICryptoTransform Encryptor = TDESAlgorithm.CreateEncryptor();
-                Results = Encryptor.TransformFinalBlock(DataToEncrypt, 0, DataToEncrypt.Length);
+                ICryptoTransform Decryptor = TDESAlgorithm.CreateDecryptor();
+                Results = Decryptor.TransformFinalBlock(DataToDecrypt, 0, DataToDecrypt.Length);
             }
             finally
             {
@@ -108,16 +93,11 @@ namespace BetInGoal
 
 
 
-            // Step 6. Return the encrypted string as a base64 encoded string
+            // Step 6. Return the decrypted string in UTF8 format
+            return UTF8.GetString(Results);
 
 
 
-            string enc = Convert.ToBase64String(Results);
-            enc = enc.Replace("+", "KLKLK");
-            enc = enc.Replace("/", "JLJLJL");
-            enc = enc.Replace("\\", "IOIOIO");
-            return enc;
         }
     }
-   
 }

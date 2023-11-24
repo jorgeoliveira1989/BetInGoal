@@ -11,7 +11,24 @@ namespace BetInGoal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lbl_utilizador.Text = "JORGE OLIVEIRA";
+            if (Session["utilizador"] == null)
+            {
+                // A sessão é nula, redireciona para loja_online.aspx
+                Response.Redirect("administrador.aspx");
+            }
+            else
+            {
+                lbl_utilizador.Text = (string)Session["utilizador"];
+            }
+
+            
+        }
+
+        protected void btn_sair_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("administrador.aspx");
         }
     }
 }

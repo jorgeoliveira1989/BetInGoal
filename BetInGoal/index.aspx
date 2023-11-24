@@ -55,9 +55,9 @@
             background-color: rgba(255, 255, 255, 0.25); /* Cor branca com 25% de opacidade */
         }
 
-        .card-body.bg-light {
-            background-color: rgba(255, 255, 255, 0.25); /* Cor branca com 25% de opacidade */
-        }
+            .card-body.bg-light {
+                background-color: rgba(255, 255, 255, 0.25); /* Cor branca com 25% de opacidade */
+            }
 
         .mark {
             background-color: blue;
@@ -91,13 +91,10 @@
                     <!-- Adiciona "align-self-center" para centralizar verticalmente relativamente aos outros elementos -->
                     <div class="align-self-center">
                         <asp:Button ID="btn_criar_conta" class="btn btn-primary btn-lg flex-grow-1" runat="server" Text="Criar Conta" OnClick="btn_criar_conta_Click" />
-                        <asp:Button ID="btn_sair" class="btn btn-danger btn-lg flex-grow-1" runat="server" Text="Sair" />
                     </div>
                 </div>
             </div>
         </nav>
-
-
 
         <nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
             <div class="container px-5">
@@ -106,18 +103,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5 me-2" href="#!">Prognósticos</a></li>
-                        <li class="nav-item"><span class="separator">|</span></li>
                         <li class="nav-item"><a class="nav-link fw-bold text-white fs-5 me-2" href="classGeral.aspx">Classificação Geral</a></li>
                         <li class="nav-item"><span class="separator">|</span></li>
                         <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="noticias.aspx">Notícias</a></li>
                         <li class="nav-item"><span class="separator">|</span></li>
                         <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="suporte.aspx">Suporte</a></li>
-                        <li class="nav-item"><span class="separator">|</span></li>
-                        <li class="nav-item d-flex align-items-center"> <!-- Alteração nesta linha -->
-                            <i class="fa-solid fa-user fa-xl ms-2" style="color: #ffffff;"></i> <!-- Alteração nesta linha -->
-                            <asp:Label ID="lbl_utilizador" class="nav-link fw-bold text-white fs-5" runat="server" Text="Nome"></asp:Label>
-                        </li>
                     </ul>
                 </div>
             </div>

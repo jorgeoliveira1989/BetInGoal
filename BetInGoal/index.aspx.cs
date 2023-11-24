@@ -11,7 +11,11 @@ namespace BetInGoal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["utilizador"] != null)
+            {
+                // A sessão é nula, redireciona para loja_online.aspx
+                Response.Redirect("cliente.aspx");
+            }
         }
 
         protected void btn_entrar_Click(object sender, EventArgs e)

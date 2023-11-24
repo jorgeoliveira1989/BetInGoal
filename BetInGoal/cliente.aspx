@@ -61,6 +61,14 @@
                             <i class="fas fa-key"></i>
                             <a href="alterarpasse.aspx" style="text-decoration: none;">Alterar Palavra-Passe</a>
                         </p>
+                        <!--Aqui começa-->
+
+                        <asp:Label ID="lbl_alterar_passe" runat="server" CssClass="mb-1" Font-Size="Large">
+                            <i class="fas fa-key" style="font-size: 22px;"></i>
+                            <asp:HyperLink ID="hl_alterar_passe" runat="server" NavigateUrl="alterarpasse.aspx" Text="Alterar Palavra-Passe" Style="text-decoration: none;font-size: 22px;"></asp:HyperLink>
+                        </asp:Label>
+
+                        <!--Aqui termina-->
                         <p class="mb-1" style="font-size: 22px;">
                             <i class="fas fa-envelope"></i>
                             <a href="enviarprog.aspx" style="text-decoration: none;">Enviar Prognóstico</a>

@@ -52,8 +52,9 @@
                 <asp:Label runat="server" AssociatedControlID="txt_passe" Text="Password" CssClass="sr-only" />
                 <asp:TextBox runat="server" ID="txt_passe" TextMode="Password" CssClass="form-control" placeholder="Palavra-Passe" />
             </div>
-            <asp:Button runat="server" ID="btn_login" Text="Entrar" CssClass="btn btn-danger btn-login"  />
+            <asp:Button runat="server" ID="btn_login" Text="Entrar" CssClass="btn btn-danger btn-login" OnClick="btn_login_Click"  />
         </div>
+        <asp:Label ID="lbl_info" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="Red"></asp:Label>
     </form>
 </body>
 </html>
