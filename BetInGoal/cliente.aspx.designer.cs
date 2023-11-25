@@ -60,6 +60,132 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.HyperLink hl_alterar_passe;
 
         /// <summary>
+        /// lbl_enviar_prog_free control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_enviar_prog_free;
+
+        /// <summary>
+        /// hl_enviar_prog_free control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hl_enviar_prog_free;
+
+        /// <summary>
+        /// lbl_enviar_prog_pro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_enviar_prog_pro;
+
+        /// <summary>
+        /// hl_enviar_prog_pro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hl_enviar_prog_pro;
+
+        /// <summary>
+        /// lbl_comprar_subscricao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_comprar_subscricao;
+
+        /// <summary>
+        /// hl_comprar_subscricao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hl_comprar_subscricao;
+
+        /// <summary>
+        /// lbl_ver_class_free control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ver_class_free;
+
+        /// <summary>
+        /// hl_ver_class_free control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hl_ver_class_free;
+
+        /// <summary>
+        /// lbl_ver_class_pro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ver_class_pro;
+
+        /// <summary>
+        /// hl_ver_class_pro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hl_ver_class_pro;
+
+        /// <summary>
+        /// lbl_criar_liga control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_criar_liga;
+
+        /// <summary>
+        /// hl_criar_liga control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hl_criar_liga;
+
+        /// <summary>
+        /// lbl_visualizar_ligas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_visualizar_ligas;
+
+        /// <summary>
+        /// hl_visualizar_ligas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hl_visualizar_ligas;
+
+        /// <summary>
         /// lbl_nome_completo control.
         /// </summary>
         /// <remarks>
@@ -78,22 +204,40 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.Label lbl_data_nascimento;
 
         /// <summary>
-        /// lbl_estado_conta control.
+        /// lbl_data_subscricao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_estado_conta;
+        protected global::System.Web.UI.WebControls.Label lbl_data_subscricao;
 
         /// <summary>
-        /// lbl_liga control.
+        /// lbl_data_compra_subscricao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_liga;
+        protected global::System.Web.UI.WebControls.Label lbl_data_compra_subscricao;
+
+        /// <summary>
+        /// lbl_total_Subscricao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_total_Subscricao;
+
+        /// <summary>
+        /// lbl_total_dias_subscricao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_total_dias_subscricao;
 
         /// <summary>
         /// lbl_prognosticos_realizados control.
@@ -150,22 +294,22 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.Label lbl_total_pontos;
 
         /// <summary>
-        /// lbl_classificacao_pro control.
+        /// lbl_classificacao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_classificacao_pro;
+        protected global::System.Web.UI.WebControls.Label lbl_classificacao;
 
         /// <summary>
-        /// lbl_class_pro control.
+        /// lbl_class control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_class_pro;
+        protected global::System.Web.UI.WebControls.Label lbl_class;
 
         /// <summary>
         /// btn_sair control.

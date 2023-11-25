@@ -21,6 +21,7 @@ namespace BetInGoal
                 // A sessão é nula, redireciona para loja_online.aspx
                 Response.Redirect("cliente.aspx");
             }
+           
         }
 
         protected void btn_entrar_Click(object sender, EventArgs e)
@@ -61,12 +62,62 @@ namespace BetInGoal
             tipoclienteParam.Direction = ParameterDirection.Output;
             mycomm.Parameters.Add(tipoclienteParam);
 
+            SqlParameter nomeclienteParam = new SqlParameter("@nome", SqlDbType.VarChar, 50);
+            nomeclienteParam.Direction = ParameterDirection.Output;
+            mycomm.Parameters.Add(nomeclienteParam);
+
+            SqlParameter dataNascimentoParam = new SqlParameter("@datanascimento", SqlDbType.Date);
+            dataNascimentoParam.Direction = ParameterDirection.Output;
+            mycomm.Parameters.Add(dataNascimentoParam);
+
+            SqlParameter dataPagamentoParam = new SqlParameter("@datapagamento", SqlDbType.Date);
+            dataPagamentoParam.Direction = ParameterDirection.Output;
+            mycomm.Parameters.Add(dataPagamentoParam);
+
+            SqlParameter totalPontosParam = new SqlParameter("@totalpontos", SqlDbType.Int);
+            totalPontosParam.Direction = ParameterDirection.Output;
+            mycomm.Parameters.Add(totalPontosParam);
+
+            SqlParameter totalPrognosticosParam = new SqlParameter("@totalprognosticos", SqlDbType.Int);
+            totalPrognosticosParam.Direction = ParameterDirection.Output;
+            mycomm.Parameters.Add(totalPrognosticosParam);
+
+            SqlParameter classificacaogeralParam = new SqlParameter("@classificacaoGeral", SqlDbType.Int);
+            classificacaogeralParam.Direction = ParameterDirection.Output;
+            mycomm.Parameters.Add(classificacaogeralParam);
+
+            SqlParameter classificacaogeralfreeParam = new SqlParameter("@classificacaoGeralFREE", SqlDbType.Int);
+            classificacaogeralfreeParam.Direction = ParameterDirection.Output;
+            mycomm.Parameters.Add(classificacaogeralfreeParam);
+
+            SqlParameter classificacaogeralproParam = new SqlParameter("@classificacaoGeralPRO", SqlDbType.Int);
+            classificacaogeralproParam.Direction = ParameterDirection.Output;
+            mycomm.Parameters.Add(classificacaogeralproParam);
+
+
             myconn.Open();
             mycomm.ExecuteNonQuery();
 
             int resposta = Convert.ToInt32(mycomm.Parameters["@retorno"].Value);
             string clienteEmail = clienteEmailParam.Value.ToString();
             string tipocliente = tipoclienteParam.Value.ToString();
+            string nome = nomeclienteParam.Value.ToString() ;
+            DateTime dataNascimento = Convert.ToDateTime(dataNascimentoParam.Value);
+            int totalPontos = Convert.IsDBNull(totalPontosParam.Value) ? 0 : Convert.ToInt32(totalPontosParam.Value);
+            int totalprognosticos = Convert.IsDBNull(totalPrognosticosParam.Value) ? 0 : Convert.ToInt32(totalPrognosticosParam.Value);
+            int classificacaogeral = Convert.IsDBNull(classificacaogeralParam.Value) ? 0 : Convert.ToInt32(classificacaogeralParam.Value);
+            int classificacaogeralfree = Convert.IsDBNull(classificacaogeralfreeParam.Value) ? 0 : Convert.ToInt32(classificacaogeralfreeParam.Value);
+            int classificacaogeralpro = Convert.IsDBNull(classificacaogeralproParam.Value) ? 0 : Convert.ToInt32(classificacaogeralproParam.Value);
+
+            // Verificar se é PRO e a data de pagamento está definida
+            if (tipocliente == "PRO" && mycomm.Parameters["@datapagamento"].Value != DBNull.Value)
+            {
+                DateTime dataPagamento = Convert.ToDateTime(mycomm.Parameters["@datapagamento"].Value);
+                Session["datapagamento"] = dataPagamento;
+            }
+
+            
+            
 
             myconn.Close();
 
@@ -75,6 +126,14 @@ namespace BetInGoal
                 Session["utilizador"] = txt_user.Text;
                 Session["clienteEmail"] = clienteEmail;
                 Session["tipocliente"] = tipocliente;
+                Session["nome"] = nome;
+                Session["datanascimento"] = dataNascimento;
+                Session["totalpontos"] = totalPontos;
+                Session["totalprognosticos"]= totalprognosticos;
+                Session["classificacaoGeral"] = classificacaogeral;
+                Session["classificacaoGeralFREE"] = classificacaogeralfree;
+                Session["classificacaoGeralPRO"] = classificacaogeralpro;
+
                 Response.Redirect("cliente.aspx");
 
             }
