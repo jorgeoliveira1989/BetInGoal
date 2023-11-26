@@ -1,11 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="suporte.aspx.cs" Inherits="BetInGoal.suporte1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="classFree.aspx.cs" Inherits="BetInGoal.classFree" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-
     <style>
     body {
         height: 100%;
@@ -74,8 +73,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-   <!-- Responsive navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0">
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0">
     <div class="container d-flex justify-content-between align-items-center w-100">
         <div class="d-flex align-items-center">
             <a href="index.aspx"><img src="imagens/BET1.png" /></a>
@@ -124,47 +122,65 @@
 </div>
     </div>
 </nav>
+
+<br />
+<br />
+<div class="container d-flex justify-content-center align-items-center">
+<div class="p-4 border rounded bg-light">
+    <h5>Ranking</h5><asp:DropDownList ID="ddl_filtro" runat="server">
+    <asp:ListItem>------------</asp:ListItem>
+    <asp:ListItem>TOP 100</asp:ListItem>
+    <asp:ListItem>TOP 50</asp:ListItem>
+    <asp:ListItem>TOP 10</asp:ListItem>
+    <asp:ListItem>TOP 3</asp:ListItem>
+
+        </asp:DropDownList>
+    <br />
+    <br />
+    <h1>CLASSIFICAÇÃO FREE</h1>
+    <asp:Repeater ID="rpt_classificacao" runat="server">
+        <HeaderTemplate>
+             <table border="1" width="1000">
+                 <table class="table table-striped">
+                    <thead>
+                        <tr>
+                          <th scope="col">Utilizador</th>
+                          <th scope="col">Total Pontos</th>
+                          <th scope="col">Nome da Liga</th>
+                        </tr>
+                    </thead>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <tbody>
+                <tr>
+                  <td><%# Eval("username")%></td>
+                  <td><%# Eval("total_pontos")%></td>
+                  <th scope="row"><%# Eval("nome_da_liga")%></th>
+                </tr>
+            </tbody>
+        </ItemTemplate>
+        <FooterTemplate>
+            </table>
+        </FooterTemplate>
+    </asp:Repeater>
+</div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ <br />
+<br />
+
         
-        <br />
-        <br />
-  <div class="container mt-6">
-  <div class="row justify-content-center">
-      <div class="col-md-6">
-          <div class="card p-6" style="background-color: #f8f9fa;">
-              <div class="card-body">
-        <div>
-            <h1 class="text-center">SUPORTE</h1>
-            <br />
-            <div>
-                <asp:TextBox ID="txt_nome" class="form-control" runat="server" placeholder="Seu Nome" CssClass="form-control" /><br />
-                <asp:TextBox ID="txt_email" class="form-control" runat="server" placeholder="Seu Email" CssClass="form-control" /><br />
-                <asp:DropDownList ID="ddl_assunto" class="form-control" runat="server" AutoPostBack="True">
-                    <asp:ListItem>-------------</asp:ListItem>
-                    <asp:ListItem>Sugestão</asp:ListItem>
-                    <asp:ListItem>Crítica</asp:ListItem>
-                    <asp:ListItem>Elogio</asp:ListItem>
-                    <asp:ListItem>Problema</asp:ListItem>
-                    <asp:ListItem>Dúvida</asp:ListItem>
-                    <asp:ListItem>Geral</asp:ListItem>
-
-                </asp:DropDownList>
-                <br />
-                <br />
-                <asp:TextBox ID="txtMessage" class="form-control" runat="server" TextMode="MultiLine" placeholder="Qual a sua mensagem?" CssClass="form-control" Rows="8"></asp:TextBox><br />
-                <asp:Button ID="btn_submeter" runat="server"  Text="Enviar Mensagem" CssClass="btn btn-primary btn-lg w-100" /><br />
-                <asp:Label ID="lbl_info" runat="server" ForeColor="Red"></asp:Label>
-            </div>
-        </div>
-    </div>
-</div>
-          </div>
-</div>
-</div>
-   
-        <br />
-        <br />
-        <br />
-
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container px-4 px-lg-5">
@@ -231,5 +247,4 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    
 </html>

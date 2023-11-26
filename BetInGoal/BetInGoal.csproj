@@ -75,9 +75,11 @@
     <Content Include="ativacao_cliente.aspx" />
     <Content Include="ativarclientes.aspx" />
     <Content Include="backoffice.aspx" />
+    <Content Include="classFree.aspx" />
     <Content Include="classGeral.aspx" />
     <Content Include="classificacaofree.aspx" />
     <Content Include="classificacaopro.aspx" />
+    <Content Include="classPro.aspx" />
     <Content Include="cliente.aspx" />
     <Content Include="comprarsubscricao.aspx" />
     <Content Include="criarAdmins.aspx" />
@@ -2227,6 +2229,13 @@
     <Compile Include="backoffice.aspx.designer.cs">
       <DependentUpon>backoffice.aspx</DependentUpon>
     </Compile>
+    <Compile Include="classFree.aspx.cs">
+      <DependentUpon>classFree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="classFree.aspx.designer.cs">
+      <DependentUpon>classFree.aspx</DependentUpon>
+    </Compile>
     <Compile Include="classGeral.aspx.cs">
       <DependentUpon>classGeral.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2247,6 +2256,13 @@
     </Compile>
     <Compile Include="classificacaopro.aspx.designer.cs">
       <DependentUpon>classificacaopro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="classPro.aspx.cs">
+      <DependentUpon>classPro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="classPro.aspx.designer.cs">
+      <DependentUpon>classPro.aspx</DependentUpon>
     </Compile>
     <Compile Include="cliente.aspx.cs">
       <DependentUpon>cliente.aspx</DependentUpon>

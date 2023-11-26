@@ -99,14 +99,29 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5 me-2" href="classGeral.aspx">Classificação Geral</a></li>
-                        <li class="nav-item"><span class="separator">|</span></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5">Notícias</a></li>
-                        <li class="nav-item"><span class="separator">|</span></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="suporte.aspx">Suporte</a></li>
-                    </ul>
-                </div>
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="index.aspx">Home</a></li>
+        <li class="nav-item"><span class="separator">|</span></li>
+        
+        <!-- Adicione um item de menu suspenso "Classificação" -->
+        <li class="nav-item dropdown">
+            <a class="nav-link fw-bold text-white fs-5 me-2 dropdown-toggle" href="#" id="navbarDropdownClassificacao" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Classificação
+            </a>
+            <!-- Adicione o menu suspenso com os itens do submenu -->
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownClassificacao">
+                <a class="dropdown-item" href="classGeral.aspx">Classificação Geral</a>
+                <a class="dropdown-item" href="classFree.aspx">Classificação FREE</a>
+                <a class="dropdown-item" href="classPro.aspx">Classificação PRO</a>
+            </div>
+        </li>
+        
+        <li class="nav-item"><span class="separator">|</span></li>
+        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="noticias.aspx">Notícias</a></li>
+        <li class="nav-item"><span class="separator">|</span></li>
+        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="suporte.aspx">Suporte</a></li>
+    </ul>
+</div>
             </div>
         </nav>       
 
