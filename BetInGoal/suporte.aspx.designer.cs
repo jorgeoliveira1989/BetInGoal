@@ -69,13 +69,13 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.DropDownList ddl_assunto;
 
         /// <summary>
-        /// txtMessage control.
+        /// txt_mensagem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMessage;
+        protected global::System.Web.UI.WebControls.TextBox txt_mensagem;
 
         /// <summary>
         /// btn_submeter control.

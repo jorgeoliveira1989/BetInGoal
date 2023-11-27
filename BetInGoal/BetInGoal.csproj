@@ -2171,6 +2171,7 @@
     <Content Include="js\scripts.js" />
     <Content Include="liga.aspx" />
     <Content Include="noticias.aspx" />
+    <Content Include="poli_e_privacidade.aspx" />
     <Content Include="recuperarpasse.aspx" />
     <Content Include="suporte.aspx" />
     <Content Include="vermensagens.aspx" />
@@ -2243,6 +2244,7 @@
     <Compile Include="classGeral.aspx.designer.cs">
       <DependentUpon>classGeral.aspx</DependentUpon>
     </Compile>
+    <Compile Include="classificacao.cs" />
     <Compile Include="classificacaofree.aspx.cs">
       <DependentUpon>classificacaofree.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2390,12 +2392,20 @@
     <Compile Include="menu_cliente.Master.designer.cs">
       <DependentUpon>menu_cliente.Master</DependentUpon>
     </Compile>
+    <Compile Include="noticia.cs" />
     <Compile Include="noticias.aspx.cs">
       <DependentUpon>noticias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="noticias.aspx.designer.cs">
       <DependentUpon>noticias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="poli_e_privacidade.aspx.cs">
+      <DependentUpon>poli_e_privacidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poli_e_privacidade.aspx.designer.cs">
+      <DependentUpon>poli_e_privacidade.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="recuperarpasse.aspx.cs">

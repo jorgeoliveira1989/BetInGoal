@@ -19,6 +19,7 @@ namespace BetInGoal
                 // A sessão é nula, redireciona para loja_online.aspx
                 Response.Redirect("cliente.aspx");
             }
+
             SqlConnection myconn = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
 
             SqlCommand mycomm = new SqlCommand();

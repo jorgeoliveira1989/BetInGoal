@@ -150,8 +150,8 @@
                 </asp:DropDownList>
                 <br />
                 <br />
-                <asp:TextBox ID="txtMessage" class="form-control" runat="server" TextMode="MultiLine" placeholder="Qual a sua mensagem?" CssClass="form-control" Rows="8"></asp:TextBox><br />
-                <asp:Button ID="btn_submeter" runat="server"  Text="Enviar Mensagem" CssClass="btn btn-primary btn-lg w-100" /><br />
+                <asp:TextBox ID="txt_mensagem" class="form-control" runat="server" TextMode="MultiLine" placeholder="Qual a sua mensagem?" CssClass="form-control" Rows="8"></asp:TextBox><br />
+                <asp:Button ID="btn_submeter" runat="server"  Text="Enviar Mensagem" CssClass="btn btn-primary btn-lg w-100" OnClick="btn_submeter_Click" /><br />
                 <asp:Label ID="lbl_info" runat="server" ForeColor="Red"></asp:Label>
             </div>
         </div>
@@ -167,40 +167,40 @@
 
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container px-4 px-lg-5">
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <h5 class="m-0 text-white">Na <b>BetInGoal</b>, cada palpite é uma oportunidade de vitória. Faça parte da nossa comunidade apaixonada e eleve os seus prognósticos a um novo patamar.
-                        </h5>
-                        <br />
-                        <p class="m-0 text-white">
-                            © DIREITOS RESERVADOS | <b>BETINGOAL</b>
-                        </p>
-                    </div>
-                    <div class="col-md-4 mb-3 text-center">
-                        <h6 class="text-white">Redes Sociais:</h6>
-                        <a href="#" class="text-white fs-2 mx-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white fs-2 mx-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white fs-2 mx-2"><i class="fab fa-twitter"></i></a>
-                        <div class="mt-3">
-                            <br />
-                            <p class="m-0 text-white">
-                                Designed by <b>BetInGoal</b>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-3 text-center">
-                        <p class="m-0 text-white">
-                            <span class="text-white fw-bold">Links Úteis</span><br />
-                            <a href="#" class="text-primary text-decoration-none">Política de Privacidade</a><br />
-                            <a href="#" class="text-primary text-decoration-none">Livro de Reclamações</a>
-                        </p>
-                    </div>
-
+    <div class="container px-4 px-lg-5">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5 class="m-0 text-white">Na <b>BetInGoal</b>, cada palpite é uma oportunidade de vitória. Faça parte da nossa comunidade apaixonada e eleve os seus prognósticos a um novo patamar.
+                </h5>
+                <br />
+                <p class="m-0 text-white">
+                    © DIREITOS RESERVADOS | <b>BETINGOAL</b>
+                </p>
+            </div>
+            <div class="col-md-4 mb-3 text-center">
+                <h6 class="text-white">Redes Sociais:</h6>
+                <a href="https://www.facebook.com" target="_blank" class="text-white fs-2 mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="text-white fs-2 mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com" target="_blank" class="text-white fs-2 mx-2"><i class="fab fa-twitter"></i></a>
+                <div class="mt-3">
+                    <br />
+                    <p class="m-0 text-white">
+                        Designed by <b>BetInGoal</b>
+                    </p>
                 </div>
             </div>
-        </footer>
+
+            <div class="col-md-4 mb-3 text-center">
+                <p class="m-0 text-white">
+                    <span class="text-white fw-bold">Links Úteis</span><br />
+                    <a href="poli_e_privacidade.aspx" class="text-primary text-decoration-none">Política de Privacidade</a><br />
+                    <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" class="text-primary text-decoration-none">Livro de Reclamações</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

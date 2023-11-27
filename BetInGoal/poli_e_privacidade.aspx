@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="classPro.aspx.cs" Inherits="BetInGoal.classPro" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="poli_e_privacidade.aspx.cs" Inherits="BetInGoal.poli_e_privacidade" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Políticas e Privacidade</title>
     <style>
     body {
         height: 100%;
@@ -69,11 +69,11 @@
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="css/styles.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css" />
-
 </head>
+
 <body>
-    <form id="form1" runat="server">
-       <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0">
+ <form id="form1" runat="server">
+           <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0">
     <div class="container d-flex justify-content-between align-items-center w-100">
         <div class="d-flex align-items-center">
             <a href="index.aspx"><img src="imagens/BET1.png" /></a>
@@ -123,101 +123,73 @@
     </div>
 </nav>
 
-<br />
-<br />
-<div class="container d-flex justify-content-center align-items-center">
+     <br /><br />
+     <div class="container d-flex justify-content-center align-items-center">
 <div class="p-4 border rounded bg-light">
-    <h5>Ranking</h5><asp:DropDownList AppendDataBoundItems="true" ID="ddl_filtro" runat="server">
-    <asp:ListItem>------------</asp:ListItem>
-    <asp:ListItem>TOP 100</asp:ListItem>
-    <asp:ListItem>TOP 50</asp:ListItem>
-    <asp:ListItem>TOP 10</asp:ListItem>
-    <asp:ListItem>TOP 3</asp:ListItem>
-
-        </asp:DropDownList>
+    <h1><b>POLÍTICAS E PRIVACIDADE:</b></h1>
     <br />
+    <h3>1. Coleta de Informações Pessoais:</h3>
+    <p>A Betingoal compromete-se a proteger a privacidade dos seus clientes. Para fornecer serviços personalizados de prognósticos de futebol, apenas coletamos informações como nome, e-mail e data de nascimento. Nenhuma informação sensível de pagamento é solicitada, pois não realizamos apostas desportivas.</p>
     <br />
-    <h1>CLASSIFICAÇÃO PRO</h1>
-       <asp:Repeater ID="rpt_classificacao" runat="server">
-    <HeaderTemplate>
-         <table border="1" width="1000">
-             <table class="table table-striped">
-                <thead>
-                    <tr>
-                      <th scope="col">Classificação</th>
-                      <th scope="col">Utilizador</th>
-                      <th scope="col">Tipo Conta</th>
-                      <th scope="col">Pontos</th>
-                    </tr>
-                </thead>
-    </HeaderTemplate>
-    <ItemTemplate>
-        <tbody>
-            <tr>
-              <td><%# Eval("Classificacao")%>º Lugar</td>
-              <td><%# Eval("username")%></td>
-              <td><%# Eval("TipoCliente")%></td>
-              <th scope="row"><%# Eval("TotalPontos")%></th>
-            </tr>
-        </tbody>
-    </ItemTemplate>
-    <FooterTemplate>
-        </table>
-    </FooterTemplate>
-</asp:Repeater>
+    
+    <h3>2. Partilhar de dados Pessoais:</h3>
+    <p>As informações pessoais dos nossos Clientes não serão vendidas, alugadas ou partilhadas com terceiros sem consentimento expresso. A divulgação de informações pode ocorrer apenas para cumprir requisitos legais ou proteger os direitos e a segurança do Betingoal e dos seus clientes.</p>
+    <br />
+    
+    <h3>3. Segurança:</h3>
+    <p>Implementamos medidas de segurança para proteger as informações dos nossos clientes contra acessos não autorizado, alteração, divulgação ou destruição. No entanto, é importante ressaltar que nenhuma transmissão online é 100% segura, e os clientes partilham informações por sua própria conta e risco.</p>
+    <br />
+    
+    <h3>4. Acesso e Controlo:</h3>
+    <p>Os nossos clientes têm o direito de aceder, corrigir ou excluir as suas informações pessoais a qualquer momento. Além disso, podem optar por não receber comunicações do Betingoal. Para exercer esses direitos, os clientes podem entrar em contato conosco por meio das opções fornecidas no site.</p>
+    <br />
+    
+    <h3>5. Menores de Idade:</h3>
+    <p>O Betingoal não coleta intencionalmente informações pessoais de menores de 18 anos. Se tivermos conhecimento de que coletamos informações de um menor, tomaremos medidas para excluir essas informações o mais rápido possível e excluir a conta do cliente.</p>
+    <br />
+    
+    <h3>6. Alterações na Política de Privacidade:</h3>
+    <p>O Betingoal reserva o direito de atualizar esta política de privacidade conforme seja necessário. As alterações serão comunicadas aos clientes por meio do site ou por outro meio apropriado. É recomendável aceder regularmente a esta política para se manter informado sobre como as suas informações são protegidas.</p>
+    
 </div>
-</div>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
- <br />
-<br />
+     </div>
+     <br /><br />
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-4 px-lg-5">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <h5 class="m-0 text-white">Na <b>BetInGoal</b>, cada palpite é uma oportunidade de vitória. Faça parte da nossa comunidade apaixonada e eleve os seus prognósticos a um novo patamar.
+                        </h5>
+                        <br />
+                        <p class="m-0 text-white">
+                            © DIREITOS RESERVADOS | <b>BETINGOAL</b>
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-3 text-center">
+                        <h6 class="text-white">Redes Sociais:</h6>
+                        <a href="#" class="text-white fs-2 mx-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white fs-2 mx-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-2 mx-2"><i class="fab fa-twitter"></i></a>
+                        <div class="mt-3">
+                            <br />
+                            <p class="m-0 text-white">
+                                Designed by <b>BetInGoal</b>
+                            </p>
+                        </div>
+                    </div>
 
-        
-    <footer class="py-5 bg-dark">
-    <div class="container px-4 px-lg-5">
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <h5 class="m-0 text-white">Na <b>BetInGoal</b>, cada palpite é uma oportunidade de vitória. Faça parte da nossa comunidade apaixonada e eleve os seus prognósticos a um novo patamar.
-                </h5>
-                <br />
-                <p class="m-0 text-white">
-                    © DIREITOS RESERVADOS | <b>BETINGOAL</b>
-                </p>
-            </div>
-            <div class="col-md-4 mb-3 text-center">
-                <h6 class="text-white">Redes Sociais:</h6>
-                <a href="https://www.facebook.com" target="_blank" class="text-white fs-2 mx-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com" target="_blank" class="text-white fs-2 mx-2"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.twitter.com" target="_blank" class="text-white fs-2 mx-2"><i class="fab fa-twitter"></i></a>
-                <div class="mt-3">
-                    <br />
-                    <p class="m-0 text-white">
-                        Designed by <b>BetInGoal</b>
-                    </p>
+                    <div class="col-md-4 mb-3 text-center">
+                        <p class="m-0 text-white">
+                            <span class="text-white fw-bold">Links Úteis</span><br />
+                            <a href="#" class="text-primary text-decoration-none">Política de Privacidade</a><br />
+                            <a href="#" class="text-primary text-decoration-none">Livro de Reclamações</a>
+                        </p>
+                    </div>
+
                 </div>
             </div>
-
-            <div class="col-md-4 mb-3 text-center">
-                <p class="m-0 text-white">
-                    <span class="text-white fw-bold">Links Úteis</span><br />
-                    <a href="poli_e_privacidade.aspx" class="text-primary text-decoration-none">Política de Privacidade</a><br />
-                    <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" class="text-primary text-decoration-none">Livro de Reclamações</a>
-                </p>
-            </div>
-
-        </div>
-    </div>
-</footer>
+        </footer>
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

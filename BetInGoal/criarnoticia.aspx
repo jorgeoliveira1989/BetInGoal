@@ -16,7 +16,7 @@
                 <asp:TextBox ID="txt_conteudo" class="form-control" Rows="5" runat="server" TextMode="MultiLine"></asp:TextBox>
             </div>
             <div class="d-grid">
-                <asp:Button ID="btn_criar_noticia" class="btn btn-danger w-100" runat="server" Text="Adicionar Notícia" Font-Bold="True" Font-Size="Medium" />
+                <asp:Button ID="btn_criar_noticia" class="btn btn-danger w-100" runat="server" Text="Adicionar Notícia" Font-Bold="True" Font-Size="Medium" OnClick="btn_criar_noticia_Click" />
             </div>
             <br />
             <div class="mb-3">
