@@ -70,6 +70,7 @@
     <Content Include="aceitarupgrades.aspx" />
     <Content Include="addjogo.aspx" />
     <Content Include="administrador.aspx" />
+    <Content Include="alterarestadomensagem.aspx" />
     <Content Include="alterarpasse.aspx" />
     <Content Include="assets\bola.png" />
     <Content Include="ativacao_cliente.aspx" />
@@ -2170,10 +2171,12 @@
     <Content Include="index.aspx" />
     <Content Include="js\scripts.js" />
     <Content Include="liga.aspx" />
+    <Content Include="mensagensrespondidas.aspx" />
     <Content Include="noticias.aspx" />
     <Content Include="poli_e_privacidade.aspx" />
     <Content Include="recuperarpasse.aspx" />
     <Content Include="suporte.aspx" />
+    <Content Include="tickets.aspx" />
     <Content Include="vermensagens.aspx" />
     <Content Include="verupgrades.aspx" />
     <Content Include="visualizarclientes.aspx" />
@@ -2201,6 +2204,13 @@
     </Compile>
     <Compile Include="administrador.aspx.designer.cs">
       <DependentUpon>administrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="alterarestadomensagem.aspx.cs">
+      <DependentUpon>alterarestadomensagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="alterarestadomensagem.aspx.designer.cs">
+      <DependentUpon>alterarestadomensagem.aspx</DependentUpon>
     </Compile>
     <Compile Include="alterarpasse.aspx.cs">
       <DependentUpon>alterarpasse.aspx</DependentUpon>
@@ -2378,6 +2388,13 @@
     <Compile Include="liga.aspx.designer.cs">
       <DependentUpon>liga.aspx</DependentUpon>
     </Compile>
+    <Compile Include="mensagensrespondidas.aspx.cs">
+      <DependentUpon>mensagensrespondidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mensagensrespondidas.aspx.designer.cs">
+      <DependentUpon>mensagensrespondidas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="menu_admin.Master.cs">
       <DependentUpon>menu_admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2422,6 +2439,14 @@
     <Compile Include="suporte.aspx.designer.cs">
       <DependentUpon>suporte.aspx</DependentUpon>
     </Compile>
+    <Compile Include="suporte.cs" />
+    <Compile Include="tickets.aspx.cs">
+      <DependentUpon>tickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tickets.aspx.designer.cs">
+      <DependentUpon>tickets.aspx</DependentUpon>
+    </Compile>
     <Compile Include="vermensagens.aspx.cs">
       <DependentUpon>vermensagens.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2436,6 +2461,7 @@
     <Compile Include="verupgrades.aspx.designer.cs">
       <DependentUpon>verupgrades.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ver_clientes.cs" />
     <Compile Include="visualizarclientes.aspx.cs">
       <DependentUpon>visualizarclientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

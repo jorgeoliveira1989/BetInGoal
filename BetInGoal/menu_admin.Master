@@ -85,8 +85,8 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="suporteDropdown">
                                 <a class="dropdown-item" href="vermensagens.aspx">Ver Mensagens</a>
-                                <a class="dropdown-item" href="responder.aspx">Responder</a>
-                                <a class="dropdown-item" href="alterarestado.aspx">Alterar estado</a>
+                                <a class="dropdown-item" href="mensagensrespondidas.aspx">Mensagens Respondidas</a>
+                                <a class="dropdown-item" href="alterarestadomensagem.aspx">Alterar estado</a>
                             </div>
                         </div>
                     </li>
