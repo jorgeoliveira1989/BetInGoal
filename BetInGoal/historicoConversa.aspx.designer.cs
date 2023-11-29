@@ -11,52 +11,61 @@ namespace BetInGoal
 {
 
 
-    public partial class aceitarupgrades
+    public partial class historicoConversa
     {
 
         /// <summary>
-        /// ddl_id control.
+        /// lbl_nome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_id;
+        protected global::System.Web.UI.WebControls.Label lbl_nome;
 
         /// <summary>
-        /// lbl_tipoConta control.
+        /// lbl_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_tipoConta;
+        protected global::System.Web.UI.WebControls.Label lbl_email;
 
         /// <summary>
-        /// lbl_altera_cliente control.
+        /// lbl_assunto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_altera_cliente;
+        protected global::System.Web.UI.WebControls.Label lbl_assunto;
 
         /// <summary>
-        /// btn_alterar_tipo_cliente control.
+        /// lt_mensagem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_alterar_tipo_cliente;
+        protected global::System.Web.UI.WebControls.Literal lt_mensagem;
 
         /// <summary>
-        /// lbl_mensagem control.
+        /// lt_mensagem_respondida control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_mensagem;
+        protected global::System.Web.UI.WebControls.Literal lt_mensagem_respondida;
+
+        /// <summary>
+        /// btn_voltar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_voltar;
     }
 }

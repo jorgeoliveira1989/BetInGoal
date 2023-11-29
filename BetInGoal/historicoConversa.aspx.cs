@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace BetInGoal
 {
-    public partial class mensagensrespondidas : System.Web.UI.Page
+    public partial class historicoConversa : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,37 +21,36 @@ namespace BetInGoal
             }
             else
             {
+                int id = Convert.ToInt32(Request.QueryString["id_suporte"]);
+
                 SqlConnection myconn = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
 
                 SqlCommand mycomm = new SqlCommand();
 
                 mycomm.CommandType = CommandType.StoredProcedure;
-                mycomm.CommandText = "ver_suporte_historico";
-                mycomm.Connection = myconn;
+                mycomm.CommandText = "mensagem_resposta_detalhe";
 
-                List<suporte> lst_suporte = new List<suporte>();
+                mycomm.Connection = myconn;
+                mycomm.Parameters.AddWithValue("@id", id);
 
                 myconn.Open();
 
-                var reader = mycomm.ExecuteReader();
-
-                while (reader.Read())
+                SqlDataReader dr = mycomm.ExecuteReader();
+                if (dr.Read())
                 {
-                    suporte ticket = new suporte();
-                    ticket.id_suporte = reader.GetInt32(0);
-                    ticket.nome = reader.GetString(1);
-                    ticket.email = reader.GetString(2);
-                    ticket.assunto = reader.GetString(3);
-                    ticket.mensagem = reader.GetString(4);
-
-                    lst_suporte.Add(ticket);
+                    lbl_nome.Text = dr["nome"].ToString();
+                    lbl_email.Text = dr["email"].ToString();
+                    lbl_assunto.Text = dr["assunto"].ToString();
+                    lt_mensagem.Text = dr["mensagem"].ToString();
+                    lt_mensagem_respondida.Text = dr["mensagem_resposta"].ToString();
                 }
 
                 myconn.Close();
-
-                rptvermensagens.DataSource = lst_suporte;
-                rptvermensagens.DataBind();
             }
+        }
+        protected void btn_voltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("mensagensrespondidas.aspx");
         }
     }
 }

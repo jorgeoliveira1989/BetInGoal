@@ -67,7 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="aceitarupgrades.aspx" />
+    <Content Include="desativarupgrade.aspx" />
     <Content Include="addjogo.aspx" />
     <Content Include="administrador.aspx" />
     <Content Include="alterarestadomensagem.aspx" />
@@ -2157,6 +2157,7 @@
     <Content Include="fontawesome\svgs\solid\yen-sign.svg" />
     <Content Include="fontawesome\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\svgs\solid\z.svg" />
+    <Content Include="historicoConversa.aspx" />
     <Content Include="imagens\background_site.jpg" />
     <Content Include="imagens\BET1.png" />
     <Content Include="imagens\BetinGoal.jpg" />
@@ -2177,6 +2178,7 @@
     <Content Include="recuperarpasse.aspx" />
     <Content Include="suporte.aspx" />
     <Content Include="tickets.aspx" />
+    <Content Include="verligas.aspx" />
     <Content Include="vermensagens.aspx" />
     <Content Include="verupgrades.aspx" />
     <Content Include="visualizarclientes.aspx" />
@@ -2184,12 +2186,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="aceitarupgrades.aspx.cs">
-      <DependentUpon>aceitarupgrades.aspx</DependentUpon>
+    <Compile Include="desativarupgrade.aspx.cs">
+      <DependentUpon>desativarupgrade.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="aceitarupgrades.aspx.designer.cs">
-      <DependentUpon>aceitarupgrades.aspx</DependentUpon>
+    <Compile Include="desativarupgrade.aspx.designer.cs">
+      <DependentUpon>desativarupgrade.aspx</DependentUpon>
     </Compile>
     <Compile Include="addjogo.aspx.cs">
       <DependentUpon>addjogo.aspx</DependentUpon>
@@ -2374,6 +2376,13 @@
     <Compile Include="fecharjogo.aspx.designer.cs">
       <DependentUpon>fecharjogo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="historicoConversa.aspx.cs">
+      <DependentUpon>historicoConversa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="historicoConversa.aspx.designer.cs">
+      <DependentUpon>historicoConversa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2417,6 +2426,7 @@
     <Compile Include="noticias.aspx.designer.cs">
       <DependentUpon>noticias.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pagamentos.cs" />
     <Compile Include="poli_e_privacidade.aspx.cs">
       <DependentUpon>poli_e_privacidade.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2446,6 +2456,13 @@
     </Compile>
     <Compile Include="tickets.aspx.designer.cs">
       <DependentUpon>tickets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verligas.aspx.cs">
+      <DependentUpon>verligas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verligas.aspx.designer.cs">
+      <DependentUpon>verligas.aspx</DependentUpon>
     </Compile>
     <Compile Include="vermensagens.aspx.cs">
       <DependentUpon>vermensagens.aspx</DependentUpon>

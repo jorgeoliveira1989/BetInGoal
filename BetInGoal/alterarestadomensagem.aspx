@@ -1,5 +1,54 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/menu_admin.Master" AutoEventWireup="true" CodeBehind="alterarestadomensagem.aspx.cs" Inherits="BetInGoal.alterarestadomensagem" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="p-4 border rounded bg-light">
+            <h3 class="mb-4 text-center"><b>Desativar Mensagem</b></h3>
+            <div>
+                <div class="mb-3">
+                    <label for="txtid" class="form-label">ID</label>
+                    <asp:DropDownList ID="ddl_id" AppendDataBoundItems="True" runat="server" DataSourceID="SqlDataSource1" DataTextField="id_suporte" DataValueField="id_suporte" AutoPostBack="True" OnSelectedIndexChanged="ddl_id_SelectedIndexChanged">
+                        <asp:ListItem>-----</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BetinGoalConnectionString %>" SelectCommand="SELECT [id_suporte] FROM [suporte] WHERE ([ativo] = @ativo)">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="True" Name="ativo" Type="Boolean" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                </div>
+                <div class="mb-3">
+                    <label for="txtNome" class="form-label"><b>Nome:</b></label>
+                    <br />
+                    <asp:Label runat="server" ID="lbl_nome" class="form-control"></asp:Label>
+                </div>
+                <div class="mb-3">
+                    <label for="txtEmail" class="form-label"><b>Email:</b></label>
+                    <br />
+                    <asp:Label runat="server" ID="lbl_email" class="form-control"></asp:Label>
+                </div>
+                <div class="mb-3">
+                    <label for="txtsituacao" class="form-label"><b>Situação:</b></label>
+                    <br />
+                    <asp:Label runat="server" ID="lbl_situacao" class="form-control"></asp:Label>
+                </div>
+                <div class="mb-3">
+                    <label for="txtmensagem" class="form-label"><b>Pergunta:</b></label>
+                    <br />
+                    <asp:Literal ID="lt_mensagem" runat="server"></asp:Literal>
+                </div>
+                <br />
+                <div class="d-grid">
+                    <asp:Button ID="btn_desativar_mensagem" class="btn btn-danger w-100" runat="server" Text="Desativar Mensagem" Font-Bold="True" Font-Size="Medium" OnClick="btn_desativar_mensagem_Click" />
+                </div>
+                <br />
+                <div class="mb-3">
+                    <asp:Label ID="lbl_mensagem" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="Red"></asp:Label>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </asp:Content>

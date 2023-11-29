@@ -21,7 +21,7 @@ namespace BetInGoal
             }
             else
             {
-                string query = "SELECT noticias.titulo, noticias.conteudo, admins.username FROM noticias INNER JOIN admins ON noticias.id_admin = admins.id_admin";
+                string query = "SELECT noticias.titulo, noticias.conteudo,admins.username,noticias.ativo FROM noticias INNER JOIN admins ON noticias.id_admin = admins.id_admin where noticias.ativo='True'";
                 SqlConnection myconn = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
 
                 SqlCommand mycomm = new SqlCommand(query, myconn);

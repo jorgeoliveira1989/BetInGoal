@@ -125,8 +125,6 @@ namespace BetInGoal
 
                 servidor.Send(email);
 
-                Response.Redirect("backoffice.aspx");
-
             }
             else
             {

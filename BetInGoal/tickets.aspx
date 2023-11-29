@@ -12,9 +12,13 @@
               <div class="card-body">
         <div>
             <div>
+                <b>NOME:</b><br />
                 <asp:Label ID="lbl_nome" class="form-control" runat="server" Text=""></asp:Label><br />
+                 <b>EMAIL:</b><br />
                 <asp:Label ID="lbl_email" class="form-control" runat="server" Text=""></asp:Label><br />
+                 <b>SITUAÇÃO:</b><br />
                 <asp:Label ID="lbl_assunto" class="form-control" runat="server" Text=""></asp:Label><br />
+                 <b>PERGUNTA:</b><br />
                 <asp:Literal ID="lt_mensagem" runat="server"></asp:Literal><br /><br />
 
                 <asp:Button ID="btn_responder_ticket" runat="server"  Text="Responder" CssClass="btn btn-primary btn-lg w-100" onclick="btn_responder_ticket_Click" /><br />
@@ -22,6 +26,7 @@
                     
                     <br />
                     <br />
+                    <b>RESPOSTA:</b><br />
                     <asp:TextBox ID="txt_resposta" class="form-control" runat="server" Rows="5" TextMode="MultiLine" placeholder="Indique o que vai responder ao Cliente"></asp:TextBox>
                     <br />
                     <br />

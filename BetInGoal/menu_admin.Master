@@ -93,6 +93,16 @@
 
                     <li class="nav-item">
                         <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="ligasDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ligas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="ligasDropdown">
+                                <a class="dropdown-item" href="verligas.aspx">Ver Ligas</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <div class="dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" id="noticiasDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notícias
                             </a>
                             <div class="dropdown-menu" aria-labelledby="noticiasDropdown">
@@ -117,13 +127,13 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="upgradeDropdown">
                                 <a class="dropdown-item" href="verupgrades.aspx">Ver Upgrades</a>
-                                <a class="dropdown-item" href="aceitarupgrades.aspx">Aceitar Upgrade</a>
+                                <a class="dropdown-item" href="desativarupgrade.aspx">Desativar Upgrade</a>
                             </div>
                         </div>
                     </li>
                     <li class="nav-item mr-3 ml-5">
                         <!-- Adicionei a classe mr-3 para adicionar margem direita -->
-                        <asp:Button ID="btn_sair" class="btn btn-danger custom-logout" runat="server" Text="SAIR" OnClick="btn_sair_Click"/>
+                        <asp:Button ID="btn_sair" class="btn btn-danger custom-logout" runat="server" Text="SAIR" OnClick="btn_sair_Click" />
                     </li>
                 </ul>
             </div>

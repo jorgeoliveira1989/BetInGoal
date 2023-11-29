@@ -9,7 +9,7 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="p-4 border rounded">
 
-            <h1>Visualizar Mensagens</h1>
+            <h1>Mensagens Pendentes</h1>
 
             <asp:Repeater ID="rptvermensagens" runat="server">
                 <HeaderTemplate>
@@ -19,7 +19,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Nome</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Tipo de Mensagem</th>
+                                <th scope="col">Situação</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>

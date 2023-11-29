@@ -11,7 +11,7 @@ namespace BetInGoal
 {
 
 
-    public partial class desativarnoticia
+    public partial class aceitarupgrades
     {
 
         /// <summary>
@@ -33,22 +33,40 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
-        /// lbl_titulo control.
+        /// lbl_nome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_titulo;
+        protected global::System.Web.UI.WebControls.Label lbl_nome;
 
         /// <summary>
-        /// btn_desativar_noticia control.
+        /// lbl_tipoConta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_desativar_noticia;
+        protected global::System.Web.UI.WebControls.Label lbl_tipoConta;
+
+        /// <summary>
+        /// lbl_altera_cliente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_altera_cliente;
+
+        /// <summary>
+        /// btn_alterar_tipo_cliente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_alterar_tipo_cliente;
 
         /// <summary>
         /// lbl_mensagem control.
