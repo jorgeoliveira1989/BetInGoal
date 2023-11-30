@@ -12,11 +12,11 @@
         <div>
             <div class="mb-3">
                 <label for="txtnome" class="form-label">Nome da Liga:</label>
-                <asp:TextBox ID="txt_nome" class="form-control" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txt_nome_liga" class="form-control" runat="server"></asp:TextBox>
             </div>
             
             <div class="d-grid">
-                <asp:Button ID="btn_criar_liga" class="btn btn-danger w-100" runat="server" Text="Criar Liga" Font-Bold="True" Font-Size="Medium" />
+                <asp:Button ID="btn_criar_liga" class="btn btn-danger w-100" runat="server" Text="Criar Liga" Font-Bold="True" Font-Size="Medium" onclick="btn_criar_liga_Click"/>
             </div>
             <br />
             <div class="mb-3">

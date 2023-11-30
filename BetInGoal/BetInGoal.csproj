@@ -90,6 +90,7 @@
     <Content Include="css\styles.css" />
     <Content Include="desativarclientes.aspx" />
     <Content Include="desativarnoticia.aspx" />
+    <Content Include="detalhe_liga.aspx" />
     <Content Include="editarnoticia.aspx" />
     <Content Include="entrar.aspx" />
     <Content Include="entrarliga.aspx" />
@@ -2334,6 +2335,13 @@
     <Compile Include="desativarnoticia.aspx.designer.cs">
       <DependentUpon>desativarnoticia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="detalhe_liga.aspx.cs">
+      <DependentUpon>detalhe_liga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detalhe_liga.aspx.designer.cs">
+      <DependentUpon>detalhe_liga.aspx</DependentUpon>
+    </Compile>
     <Compile Include="editarnoticia.aspx.cs">
       <DependentUpon>editarnoticia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2397,6 +2405,7 @@
     <Compile Include="liga.aspx.designer.cs">
       <DependentUpon>liga.aspx</DependentUpon>
     </Compile>
+    <Compile Include="lista_amigos.cs" />
     <Compile Include="mensagensrespondidas.aspx.cs">
       <DependentUpon>mensagensrespondidas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2479,6 +2488,7 @@
       <DependentUpon>verupgrades.aspx</DependentUpon>
     </Compile>
     <Compile Include="ver_clientes.cs" />
+    <Compile Include="ver_liga.cs" />
     <Compile Include="visualizarclientes.aspx.cs">
       <DependentUpon>visualizarclientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

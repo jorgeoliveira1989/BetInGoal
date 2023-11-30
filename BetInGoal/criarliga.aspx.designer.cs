@@ -15,13 +15,13 @@ namespace BetInGoal
     {
 
         /// <summary>
-        /// txt_nome control.
+        /// txt_nome_liga control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nome;
+        protected global::System.Web.UI.WebControls.TextBox txt_nome_liga;
 
         /// <summary>
         /// btn_criar_liga control.

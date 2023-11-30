@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -85,6 +88,53 @@ namespace BetInGoal
 
                 if (conta == "PRO")
                 {
+                    //Verifica se o cliente já criou uma liga
+
+                    string utilizador = (string)Session["utilizador"];
+
+                    SqlConnection myconn = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
+
+                    string queryCliente = "SELECT id_cliente FROM clientes WHERE username = @username";
+                    SqlCommand cmdCliente = new SqlCommand(queryCliente, myconn);
+
+                    cmdCliente.Parameters.AddWithValue("@username", utilizador);
+
+                    myconn.Open();
+
+                    int idCliente = Convert.ToInt32(cmdCliente.ExecuteScalar());
+                    myconn.Close();
+
+                    SqlCommand mycomm = new SqlCommand();
+                    mycomm.CommandType = CommandType.StoredProcedure;
+                    mycomm.CommandText = "verifica_cliente_ja_criou_liga";
+
+                    mycomm.Connection = myconn;
+
+                    mycomm.Parameters.AddWithValue("@id_cliente", idCliente);
+
+                    SqlParameter valor = new SqlParameter();
+                    valor.ParameterName = "@retorno";
+                    valor.Direction = ParameterDirection.Output;
+                    valor.SqlDbType = SqlDbType.Int;
+
+                    mycomm.Parameters.Add(valor);
+
+                    myconn.Open();
+                    mycomm.ExecuteNonQuery();
+
+                    int resposta = Convert.ToInt32(mycomm.Parameters["@retorno"].Value);
+                    myconn.Close();
+                    if (resposta == 1)
+                    {
+                        lbl_criar_liga.Visible = false;
+                    }
+                    else
+                    {
+                        lbl_criar_liga.Visible = true;
+                    }
+
+                    //Termina aqui a procura para ver se o cliente PRO já criou uma liga
+
                     DateTime pagamento = (DateTime)Session["datapagamento"];
                     lbl_data_compra_subscricao.Text = pagamento.ToShortDateString();
 
