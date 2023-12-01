@@ -91,6 +91,7 @@
     <Content Include="desativarclientes.aspx" />
     <Content Include="desativarnoticia.aspx" />
     <Content Include="detalhe_liga.aspx" />
+    <Content Include="detalhe_ligas.aspx" />
     <Content Include="editarnoticia.aspx" />
     <Content Include="entrar.aspx" />
     <Content Include="entrarliga.aspx" />
@@ -2341,6 +2342,13 @@
     </Compile>
     <Compile Include="detalhe_liga.aspx.designer.cs">
       <DependentUpon>detalhe_liga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="detalhe_ligas.aspx.cs">
+      <DependentUpon>detalhe_ligas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detalhe_ligas.aspx.designer.cs">
+      <DependentUpon>detalhe_ligas.aspx</DependentUpon>
     </Compile>
     <Compile Include="editarnoticia.aspx.cs">
       <DependentUpon>editarnoticia.aspx</DependentUpon>
