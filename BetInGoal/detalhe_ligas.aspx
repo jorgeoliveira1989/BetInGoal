@@ -22,7 +22,7 @@
                     <br /><br />
                     <asp:Button ID="btn_voltar" CssClass="btn btn-danger btn-lg" runat="server" Text="<< Voltar" OnClick="btn_voltar_Click" />
                     <br /><br />
-     
+                    <asp:Label ID="lbl_mensagem" runat="server" Text=""></asp:Label>
                 </div>
             </div>
         </div>

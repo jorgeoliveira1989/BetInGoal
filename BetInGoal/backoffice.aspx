@@ -139,6 +139,50 @@
             </div>
         </nav>
 
+      <br />
+        <br />
+        
+<div class="row text-center justify-content-center">
+    <div class="col-lg-2 mb-4 mx-lg-3">
+        <!-- Quadro 1 -->
+        <div class="single_quick_activity bg-success text-white p-3">
+            <h2>CLIENTES</h2>
+            <h3><asp:Label ID="lbl_quant_clientes" runat="server" Text=""></asp:Label></h3>
+            <p>Saved 25%</p>
+        </div>
+    </div>
+    <div class="col-lg-2 mb-4 mx-lg-3">
+        <!-- Quadro 2 -->
+        <div class="single_quick_activity bg-primary text-white p-3">
+            <h2>VENDAS</h2>
+            <h3>$ <span class="counter">79,000</span> </h3>
+            <p>Saved 25%</p>
+        </div>
+    </div>
+    <div class="col-lg-2 mb-4 mx-lg-3">
+        <!-- Quadro 3 -->
+        <div class="single_quick_activity bg-secondary text-white p-3">
+            <h2>MENSAGENS</h2>
+            <h3>$ <span class="counter">92,000</span> </h3>
+            <p>Saved 25%</p>
+        </div>
+    </div>
+    <div class="col-lg-2 mb-4 mx-lg-3">
+        <!-- Quadro 4 -->
+        <div class="single_quick_activity bg-danger text-white p-3">
+            <h2>LIGAS</h2>
+            <h3>$ <span class="counter">179,000</span> </h3>
+            <p>Saved 65%</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
     </form>
     <!-- Seu conteúdo do backoffice aqui -->
 

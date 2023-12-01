@@ -22,7 +22,7 @@ namespace BetInGoal
             }
             else
             {
-                int id = Convert.ToInt32(Request.QueryString["IdLiga"]);
+                int id = Convert.ToInt32(Request.QueryString["id_liga"]);
 
                 SqlConnection myconn = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
 
@@ -46,7 +46,7 @@ namespace BetInGoal
                 }
                 myconn.Close();
 
-                string query = "SELECT ligas.nome_liga AS NomeLiga,amigos.nome_amigo AS NomeAmigo,pontuacao.pontos_individuais AS PontosIndividuais,pontuacao.pontos_jornada AS PontosJornada FROM pontuacao INNER JOIN amigos ON pontuacao.id_amigo = amigos.id_amigo INNER JOIN ligas ON pontuacao.id_liga = ligas.id_liga ORDER BY pontuacao.pontos_individuais DESC";
+                string query = "SELECT ligas.nome_liga AS NomeLiga,amigos.nome_amigo AS NomeAmigo,pontuacao.pontos_individuais AS PontosIndividuais,pontuacao.pontos_jornada AS PontosJornada FROM pontuacao INNER JOIN amigos ON pontuacao.id_amigo = amigos.id_amigo INNER JOIN ligas ON pontuacao.id_liga = ligas.id_liga WHERE ligas.nome_liga ='" + lbl_nome_liga.Text + "' ORDER BY pontuacao.pontos_individuais DESC";
 
                 SqlCommand mycomm1 = new SqlCommand(query, myconn);
 

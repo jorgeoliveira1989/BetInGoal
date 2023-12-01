@@ -21,6 +21,7 @@ namespace BetInGoal
             }
             else
             {
+
                 SqlConnection myconn = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
 
                 SqlCommand mycomm = new SqlCommand();

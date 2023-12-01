@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -21,9 +23,15 @@ namespace BetInGoal
                 lbl_utilizador.Text = (string)Session["utilizador"];
             }
 
-            
-        }
+            if (!IsPostBack)
+            {
+                SqlConnection myconn = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
 
+                SqlCommand cmdtotalClientes = new SqlCommand("SELECT COUNT(*) as TotalClientes FROM clientes", myconn);
+
+                lbl_quant_clientes.Text=cmdtotalClientes.ToString();
+            }
+        }
         protected void btn_sair_Click(object sender, EventArgs e)
         {
             Session.Clear();
