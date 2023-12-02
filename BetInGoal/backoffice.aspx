@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="backoffice.aspx.cs" Inherits="BetInGoal.backoffice" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,6 +20,12 @@
         .custom-logout {
             margin-left: auto; /* Mover para a direita */
         }
+
+        /* Remover sublinhado dos links ao passar o mouse */
+        a:hover {
+            text-decoration: none;
+        }
+
     </style>
 
 </head>
@@ -139,48 +147,100 @@
             </div>
         </nav>
 
-      <br />
         <br />
-        
-<div class="row text-center justify-content-center">
-    <div class="col-lg-2 mb-4 mx-lg-3">
-        <!-- Quadro 1 -->
-        <div class="single_quick_activity bg-success text-white p-3">
-            <h2>CLIENTES</h2>
-            <h3><asp:Label ID="lbl_quant_clientes" runat="server" Text=""></asp:Label></h3>
-            <p>Saved 25%</p>
+        <br />
+
+        <div class="row text-center justify-content-center">
+            <div class="col-lg-2 mb-4 mx-lg-3">
+                <!-- Quadro 1 -->
+                <a href="visualizarclientes.aspx">
+                    <div class="single_quick_activity bg-success text-white p-3">
+                        <h2>CLIENTES</h2>
+                        <h1>
+                            <asp:Label ID="lbl_quant_clientes" runat="server" Text=""></asp:Label></h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-2 mb-4 mx-lg-3">
+                <!-- Quadro 2 -->
+                <a href="verupgrades.aspx">
+                    <div class="single_quick_activity bg-primary text-white p-3">
+                        <h2>VENDAS</h2>
+                        <h1>
+                            <asp:Label ID="lbl_quant_vendas" runat="server" Text=""></asp:Label></h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-2 mb-4 mx-lg-3">
+                <!-- Quadro 3 -->
+                <a href="vermensagens.aspx">
+                    <div class="single_quick_activity bg-secondary text-white p-3">
+                        <h2>MENSAGENS</h2>
+                        <h1>
+                            <asp:Label ID="lbl_quant_mensagens" runat="server" Text=""></asp:Label></h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-2 mb-4 mx-lg-3">
+                <!-- Quadro 4 -->
+                <a href="verligas.aspx">
+                    <div class="single_quick_activity bg-danger text-white p-3">
+                        <h2>LIGAS</h2>
+                        <h1>
+                            <asp:Label ID="lbl_quant_ligas" runat="server" Text=""></asp:Label></h1>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="col-lg-2 mb-4 mx-lg-3">
-        <!-- Quadro 2 -->
-        <div class="single_quick_activity bg-primary text-white p-3">
-            <h2>VENDAS</h2>
-            <h3>$ <span class="counter">79,000</span> </h3>
-            <p>Saved 25%</p>
+
+        <br />
+        <br />
+
+        <div class="row text-center mt-5">
+            <!-- Gráfico 1 -->
+            <div class="col-lg-4 mb-4 mx-auto">
+                <h1>CLIENTES</h1>
+                <asp:Chart ID="Chart1" runat="server" CssClass="img-fluid" Height="450" Width="500" Palette="SeaGreen">
+                    <Series>
+                        <asp:Series Name="Series1">
+                        </asp:Series>
+                    </Series>
+                    <ChartAreas>
+                        <asp:ChartArea Name="ChartArea1">
+                        </asp:ChartArea>
+                    </ChartAreas>
+                </asp:Chart>
+            </div>
+
+            <!-- Gráfico 2 -->
+            <div class="col-lg-4 mb-4 mx-auto">
+                <h1>VENDAS</h1>
+                <asp:Chart ID="Chart2" runat="server" CssClass="img-fluid" Height="450" Width="500" Palette="Pastel">
+                    <Series>
+                        <asp:Series Name="Series1">
+                        </asp:Series>
+                    </Series>
+                    <ChartAreas>
+                        <asp:ChartArea Name="ChartArea1">
+                        </asp:ChartArea>
+                    </ChartAreas>
+                </asp:Chart>
+            </div>
+            <!-- Gráfico 3 -->
+            <div class="col-lg-4 mb-4 mx-auto">
+                <h1>MENSAGENS</h1>
+                <asp:Chart ID="Chart3" runat="server" CssClass="img-fluid" Height="450" Width="500" Palette="Grayscale">
+                    <Series>
+                        <asp:Series Name="Series1">
+                        </asp:Series>
+                    </Series>
+                    <ChartAreas>
+                        <asp:ChartArea Name="ChartArea1">
+                        </asp:ChartArea>
+                    </ChartAreas>
+                </asp:Chart>
+            </div>
         </div>
-    </div>
-    <div class="col-lg-2 mb-4 mx-lg-3">
-        <!-- Quadro 3 -->
-        <div class="single_quick_activity bg-secondary text-white p-3">
-            <h2>MENSAGENS</h2>
-            <h3>$ <span class="counter">92,000</span> </h3>
-            <p>Saved 25%</p>
-        </div>
-    </div>
-    <div class="col-lg-2 mb-4 mx-lg-3">
-        <!-- Quadro 4 -->
-        <div class="single_quick_activity bg-danger text-white p-3">
-            <h2>LIGAS</h2>
-            <h3>$ <span class="counter">179,000</span> </h3>
-            <p>Saved 65%</p>
-        </div>
-    </div>
-</div>
-
-
-
-
-
 
 
     </form>
