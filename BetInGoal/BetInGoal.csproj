@@ -68,8 +68,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="desativarupgrade.aspx" />
     <Content Include="addjogo.aspx" />
+    <Content Include="desativarupgrade.aspx" />
+    <Content Include="addjogo2.aspx" />
     <Content Include="administrador.aspx" />
     <Content Include="alterarestadomensagem.aspx" />
     <Content Include="alterarpasse.aspx" />
@@ -99,6 +100,7 @@
     <Content Include="enviarprog.aspx" />
     <Content Include="enviarprognostico.aspx" />
     <Content Include="fecharjogo.aspx" />
+    <Content Include="fecharjogos.aspx" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
     <Content Include="fontawesome\css\brands.css" />
@@ -2189,6 +2191,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addjogo.aspx.cs">
+      <DependentUpon>addjogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addjogo.aspx.designer.cs">
+      <DependentUpon>addjogo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="desativarupgrade.aspx.cs">
       <DependentUpon>desativarupgrade.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2196,12 +2205,12 @@
     <Compile Include="desativarupgrade.aspx.designer.cs">
       <DependentUpon>desativarupgrade.aspx</DependentUpon>
     </Compile>
-    <Compile Include="addjogo.aspx.cs">
-      <DependentUpon>addjogo.aspx</DependentUpon>
+    <Compile Include="addjogo2.aspx.cs">
+      <DependentUpon>addjogo2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="addjogo.aspx.designer.cs">
-      <DependentUpon>addjogo.aspx</DependentUpon>
+    <Compile Include="addjogo2.aspx.designer.cs">
+      <DependentUpon>addjogo2.aspx</DependentUpon>
     </Compile>
     <Compile Include="administrador.aspx.cs">
       <DependentUpon>administrador.aspx</DependentUpon>
@@ -2393,6 +2402,13 @@
     <Compile Include="fecharjogo.aspx.designer.cs">
       <DependentUpon>fecharjogo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="fecharjogos.aspx.cs">
+      <DependentUpon>fecharjogos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fecharjogos.aspx.designer.cs">
+      <DependentUpon>fecharjogos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="historicoConversa.aspx.cs">
       <DependentUpon>historicoConversa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2407,6 +2423,7 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jogos.cs" />
     <Compile Include="liga.aspx.cs">
       <DependentUpon>liga.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

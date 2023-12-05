@@ -11,53 +11,53 @@ namespace BetInGoal
 {
 
 
-    public partial class addjogo1
+    public partial class fecharjogos
     {
 
         /// <summary>
-        /// txt_nome_liga control.
+        /// lbl_nome_liga control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nome_liga;
+        protected global::System.Web.UI.WebControls.Label lbl_nome_liga;
 
         /// <summary>
-        /// txt_jornada control.
+        /// lbl_jornada control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_jornada;
+        protected global::System.Web.UI.WebControls.Label lbl_jornada;
 
         /// <summary>
-        /// txt_data control.
+        /// lbl_data control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_data;
+        protected global::System.Web.UI.WebControls.Label lbl_data;
 
         /// <summary>
-        /// txt_hora control.
+        /// lbl_hora control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_hora;
+        protected global::System.Web.UI.WebControls.Label lbl_hora;
 
         /// <summary>
-        /// txt_equipa_casa control.
+        /// lbl_equipa_casa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_equipa_casa;
+        protected global::System.Web.UI.WebControls.Label lbl_equipa_casa;
 
         /// <summary>
         /// txt_resultado_casa control.
@@ -78,31 +78,31 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.TextBox txt_resultado_fora;
 
         /// <summary>
-        /// txt_equipa_fora control.
+        /// lbl_equipa_fora control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_equipa_fora;
+        protected global::System.Web.UI.WebControls.Label lbl_equipa_fora;
 
         /// <summary>
-        /// ckb_jogoEspecial control.
+        /// lbl_jogo_especial control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_jogoEspecial;
+        protected global::System.Web.UI.WebControls.Label lbl_jogo_especial;
 
         /// <summary>
-        /// btn_criar_jornada control.
+        /// btn_fechar_jogo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_criar_jornada;
+        protected global::System.Web.UI.WebControls.Button btn_fechar_jogo;
 
         /// <summary>
         /// lbl_mensagem control.
