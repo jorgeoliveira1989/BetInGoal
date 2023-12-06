@@ -12,6 +12,16 @@ namespace BetInGoal
 {
     public partial class fecharjogos : System.Web.UI.Page
     {
+        int resultadocertoFree = 0;
+        int resultadocertoPro = 0;
+        int quantidadeGolosFree = 0;
+        int quantidadeGolosPro = 0;
+        int acertaambosFree = 0;
+        int acertaambosPro = 0;
+        int acertaambosespecialFree = 0;
+        int acertaambosespecialPro = 0;
+        int pontosIndividuais = 0;
+        int totalpontos = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -61,21 +71,12 @@ namespace BetInGoal
         protected void btn_fechar_jogo_Click(object sender, EventArgs e)
         {
             /*
-             Na tabela prognosticos, vai ver o respetivo id_jogo e vai comparar com resultadofinal_casa com o resultado da tabela jogos resultado_casa
-             e também o resultado_fora.
-                Aqui nesta situação vai ter opções para comparar:
-                   ->Se é o resultado certo 2 pontos contas free /3 pontos contas PRO
-                   ->Acertar na quantidade de golos 4 pontos free/6 pontos contas PRO
-                   ->Acertar em ambos resultado certo + quantidade de golos 7 pontos FREE/ 9 pontos PRO
-                   ->Acertar em ambos e jogo da jornada 10 pontos free/12 pontos conta PRO
-             Depois de ver os ifs, agora ainda na tabela prognosticos guardar o valor somando o valor do
-             resultado dos ifs ao valor atual no campo pontos_obtidos
-             
-             Por fim, na tabela pontuação, identificar a jornada atual e nos pontos individuiais ir buscar os
+                       
+             Por fim, na tabela pontuação, identificar a jornada atual e nos pontos individuais ir buscar os
              pontos total_obtidos na jornada e adicionar aos pontos que já tinha. No campo pontos_jornada, guardar
              o total dos pontos obtidos na respetiva jornada.
              
-              Realizado: Atualizar a tabela jogos
+             
              */
             SqlConnection myconn1 = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
 
@@ -142,8 +143,36 @@ namespace BetInGoal
                 resultadosPrognosticos.Add(new Tuple<int, int>(resultadoFinalCasa, resultadoFinalFora));
             }
 
-            // Certificar-se de fechar a conexão, mesmo em caso de exceção
+            // Certificar de fechar a conexão, mesmo em caso de exceção
             myconn2.Close();
+
+            SqlConnection myconn = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
+
+            myconn.Open();
+
+            string queryPrognostico = "SELECT username FROM prognosticos WHERE id_jogo = @id_jogo";
+            SqlCommand cmdPrognostico = new SqlCommand(queryPrognostico, myconn);
+
+            // Adicionar parâmetro
+            cmdPrognostico.Parameters.AddWithValue("@id_jogo", Convert.ToInt32(Request.QueryString["id_jogo"]));
+
+            // Executar o comando SQL para obter o username
+            string usernamePrognostico = cmdPrognostico.ExecuteScalar()?.ToString();
+
+            // Agora, buscar o id_cliente na tabela clientes usando o usernamePrognostico
+            string queryCliente = "SELECT id_cliente FROM clientes WHERE username = @username";
+            SqlCommand cmdCliente = new SqlCommand(queryCliente, myconn);
+
+            // Adicionar parâmetro para o username obtido anteriormente
+            cmdCliente.Parameters.AddWithValue("@username", usernamePrognostico);
+
+            // Executar o comando SQL para obter o id_cliente
+            int idCliente = Convert.ToInt32(cmdCliente.ExecuteScalar());
+
+            myconn.Close();
+
+            // Agora, a variável tipoCliente contém o valor da coluna tipo_cliente da tabela clientes.
+
 
             if (resultadosPrognosticos.Count > 0)
             {
@@ -152,13 +181,163 @@ namespace BetInGoal
                 int resultadoCasa = Convert.ToInt32(txt_resultado_casa.Text);
                 int resultadoFora = Convert.ToInt32(txt_resultado_fora.Text);
 
-                if (prognosticoCasa > prognosticoFora && resultadoCasa > resultadoFora)
+                if(((prognosticoCasa > prognosticoFora && resultadoCasa > resultadoFora && Math.Abs(prognosticoCasa - prognosticoFora) == Math.Abs(resultadoCasa - resultadoFora) && (lbl_jogo_especial.Text== "True"))||(prognosticoCasa < prognosticoFora && resultadoCasa < resultadoFora && Math.Abs(prognosticoCasa - prognosticoFora) == Math.Abs(resultadoCasa - resultadoFora) && lbl_jogo_especial.Text=="True")))
                 {
-                    //guardar na base de dados mas antes ver a situação se
-                    //for conta free ou PRO
-                }
-            }
+                    acertaambosespecialFree = 10;
+                    acertaambosespecialPro = 12;
 
+                    SqlCommand mycomm = new SqlCommand();
+                    mycomm.CommandType = CommandType.StoredProcedure;
+                    mycomm.CommandText = "acertaambosespecial";
+
+                    mycomm.Connection = myconn;
+
+                    mycomm.Parameters.AddWithValue("@id_cliente", idCliente);
+                    mycomm.Parameters.AddWithValue("@id_jogo", Convert.ToInt32(Request.QueryString["id_jogo"]));
+                    mycomm.Parameters.AddWithValue("@acertaambosespecialfree", acertaambosespecialFree);
+                    mycomm.Parameters.AddWithValue("@acertaambosespecialpro", acertaambosespecialPro);
+
+                    myconn.Open();
+                    mycomm.ExecuteNonQuery();
+                    myconn.Close();
+                }
+
+                else if ((prognosticoCasa > prognosticoFora && resultadoCasa > resultadoFora && Math.Abs(prognosticoCasa - prognosticoFora) == Math.Abs(resultadoCasa - resultadoFora)) || (prognosticoCasa < prognosticoFora && resultadoCasa < resultadoFora && Math.Abs(prognosticoCasa - prognosticoFora) == Math.Abs(resultadoCasa - resultadoFora)))
+                {
+                    // Acertar ambos
+                    acertaambosFree = 7;
+                    acertaambosPro = 9;
+
+                    SqlCommand mycomm = new SqlCommand();
+                    mycomm.CommandType = CommandType.StoredProcedure;
+                    mycomm.CommandText = "acertaambos";
+
+                    mycomm.Connection = myconn;
+
+                    mycomm.Parameters.AddWithValue("@id_cliente", idCliente);
+                    mycomm.Parameters.AddWithValue("@id_jogo", Convert.ToInt32(Request.QueryString["id_jogo"]));
+                    mycomm.Parameters.AddWithValue("@acertaambosfree", acertaambosFree);
+                    mycomm.Parameters.AddWithValue("@acertaambospro", acertaambosPro);
+
+                    myconn.Open();
+                    mycomm.ExecuteNonQuery();
+                    myconn.Close();
+                }
+
+                else if (Math.Abs(prognosticoCasa - prognosticoFora) == Math.Abs(resultadoCasa - resultadoFora))
+                {
+                    // Quantidade de gols
+                    quantidadeGolosFree = 4;
+                    quantidadeGolosPro = 6;
+
+                    SqlCommand mycomm = new SqlCommand();
+                    mycomm.CommandType = CommandType.StoredProcedure;
+                    mycomm.CommandText = "quantidadeGolos";
+
+                    mycomm.Connection = myconn;
+
+                    mycomm.Parameters.AddWithValue("@id_cliente", idCliente);
+                    mycomm.Parameters.AddWithValue("@id_jogo", Convert.ToInt32(Request.QueryString["id_jogo"]));
+                    mycomm.Parameters.AddWithValue("@quantidadegolosfree", quantidadeGolosFree);
+                    mycomm.Parameters.AddWithValue("@quantidadegolospro", quantidadeGolosPro);
+
+                    myconn.Open();
+                    mycomm.ExecuteNonQuery();
+                    myconn.Close();
+                }
+
+                else if ((prognosticoCasa > prognosticoFora && resultadoCasa > resultadoFora) || (prognosticoCasa < prognosticoFora && resultadoCasa < resultadoFora))
+                {
+                    // Resultado certo
+                    resultadocertoFree = 2;
+                    resultadocertoPro = 3;
+
+                    SqlCommand mycomm = new SqlCommand();
+                    mycomm.CommandType = CommandType.StoredProcedure;
+                    mycomm.CommandText = "resultadocerto";
+
+                    mycomm.Connection = myconn;
+
+                    mycomm.Parameters.AddWithValue("@id_cliente", idCliente);
+                    mycomm.Parameters.AddWithValue("@id_jogo", Convert.ToInt32(Request.QueryString["id_jogo"]));
+                    mycomm.Parameters.AddWithValue("@resultadocertofree", resultadocertoFree);
+                    mycomm.Parameters.AddWithValue("@resultadocertopro", resultadocertoPro);
+
+                    myconn.Open();
+                    mycomm.ExecuteNonQuery();
+                    myconn.Close();
+                }
+
+                myconn.Open();
+
+                // Agora, buscar o id_cliente na tabela clientes usando o usernamePrognostico
+                string queryCliente1 = "SELECT id_cliente FROM clientes WHERE username = @username";
+                SqlCommand cmdCliente1 = new SqlCommand(queryCliente1, myconn);
+
+                // Adicionar parâmetro para o username obtido anteriormente
+                cmdCliente1.Parameters.AddWithValue("@username", usernamePrognostico);
+
+                // Executar o comando SQL para obter o id_cliente
+                int idCliente1 = Convert.ToInt32(cmdCliente1.ExecuteScalar());
+
+                // Agora, buscar o id_amigo na tabela amigos usando o id_cliente
+                string queryAmigo = "SELECT id_amigo FROM amigos WHERE id_cliente = @id_cliente";
+                SqlCommand cmdAmigo = new SqlCommand(queryAmigo, myconn);
+
+                // Adicionar parâmetro para o id_cliente obtido anteriormente
+                cmdAmigo.Parameters.AddWithValue("@id_cliente", idCliente1);
+
+                // Executar o comando SQL para obter o id_amigo
+                int idAmigo = Convert.ToInt32(cmdAmigo.ExecuteScalar());
+
+                // Agora, buscar os pontos_individuais na tabela pontuacao usando o id_amigo
+                string queryPontosIndividuais = "SELECT pontos_individuais FROM pontuacao WHERE id_amigo = @id_amigo";
+                SqlCommand cmdPontosIndividuais = new SqlCommand(queryPontosIndividuais, myconn);
+
+                // Adicionar parâmetro para o id_amigo obtido anteriormente
+                cmdPontosIndividuais.Parameters.AddWithValue("@id_amigo", idAmigo);
+
+                // Executar o comando SQL para obter os pontos_individuais
+                int pontosIndividuais = Convert.ToInt32(cmdPontosIndividuais.ExecuteScalar());
+
+                // Agora, buscar o tipo_cliente na tabela clientes usando o idCliente1
+                string queryTipoCliente = "SELECT tipo_cliente FROM clientes WHERE id_cliente = @id_cliente";
+                SqlCommand cmdTipoCliente = new SqlCommand(queryTipoCliente, myconn);
+
+                // Adicionar parâmetro para o id_cliente obtido anteriormente
+                cmdTipoCliente.Parameters.AddWithValue("@id_cliente", idCliente1);
+
+                // Executar o comando SQL para obter o tipo_cliente
+                string tipoCliente = cmdTipoCliente.ExecuteScalar()?.ToString();
+
+                myconn.Close();
+
+                int totalpontos = 0;
+
+                if (tipoCliente == "FREE")
+                {
+                    totalpontos = pontosIndividuais + resultadocertoFree + quantidadeGolosFree + acertaambosFree + acertaambosespecialFree;
+                }
+                else if (tipoCliente == "PRO")
+                {
+                    totalpontos = pontosIndividuais + resultadocertoPro + quantidadeGolosPro + acertaambosPro + acertaambosespecialPro;
+                }
+
+                SqlCommand mycomm4 = new SqlCommand();
+                mycomm4.CommandType = CommandType.StoredProcedure;
+                mycomm4.CommandText = "CalcularResultadosPontuacao";
+
+                mycomm4.Connection = myconn;
+                mycomm4.Parameters.AddWithValue("@id_amigo", idAmigo);
+                mycomm4.Parameters.AddWithValue("@jornada", lbl_jornada.Text);
+                mycomm4.Parameters.AddWithValue("@pontos_individuais", totalpontos);
+
+                myconn.Open();
+                mycomm4.ExecuteNonQuery();
+                myconn.Close();
+
+                lbl_mensagem.Text = totalpontos.ToString();
+            }
         }
     }
 }
