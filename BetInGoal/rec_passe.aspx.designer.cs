@@ -11,35 +11,44 @@ namespace BetInGoal
 {
 
 
-    public partial class alterarpasse
+    public partial class rec_passe
     {
 
         /// <summary>
-        /// txtSenhaAtual control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSenhaAtual;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// CompareValidator1 control.
+        /// btn_entrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        protected global::System.Web.UI.WebControls.Button btn_entrar;
 
         /// <summary>
-        /// txtNovaSenha control.
+        /// btn_criar_conta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNovaSenha;
+        protected global::System.Web.UI.WebControls.Button btn_criar_conta;
+
+        /// <summary>
+        /// lbl_user control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_user;
 
         /// <summary>
         /// CompareValidator2 control.
@@ -51,30 +60,57 @@ namespace BetInGoal
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
 
         /// <summary>
-        /// txtConfirmarNovaSenha control.
+        /// txt_novapasse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmarNovaSenha;
+        protected global::System.Web.UI.WebControls.TextBox txt_novapasse;
 
         /// <summary>
-        /// btnAlterarPasse control.
+        /// CompareValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAlterarPasse;
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
 
         /// <summary>
-        /// lblInfo control.
+        /// txt_repnovapasse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInfo;
+        protected global::System.Web.UI.WebControls.TextBox txt_repnovapasse;
+
+        /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+
+        /// <summary>
+        /// btn_recuperarConta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_recuperarConta;
+
+        /// <summary>
+        /// lbl_info control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_info;
     }
 }

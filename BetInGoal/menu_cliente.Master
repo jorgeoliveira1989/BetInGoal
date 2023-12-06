@@ -99,13 +99,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5 me-2" href="enviarprog.aspx">Prognósticos</a></li>
+                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5 me-2" href="enviarprog.aspx">Enviar Prognósticos</a></li>
                         <li class="nav-item"><span class="separator">|</span></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5 me-2" href="classGeral.aspx">Classificação Geral</a></li>
+                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5 me-2" href="classificacao.aspx">Ver Classificação</a></li>
                         <li class="nav-item"><span class="separator">|</span></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="noticias.aspx">Notícias</a></li>
-                        <li class="nav-item"><span class="separator">|</span></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="suporte.aspx">Suporte</a></li>
+                        <li class="nav-item"><a class="nav-link fw-bold text-white fs-5" href="entrarliga.aspx">Ver Ligas</a></li>
                         <li class="nav-item"><span class="separator">|</span></li>
                         <li class="nav-item ml-2">
                             <div class="dropdown">
@@ -114,12 +112,9 @@
                                     <asp:Label ID="lbl_utilizador" class="fw-bold text-white fs-5 ms-2" runat="server" Text=""></asp:Label>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="clientesDropdown">
-                                    <a class="dropdown-item" href="cliente.aspx">Dados do Cliente</a>
+                                    <a class="dropdown-item" href="cliente.aspx">Área do Cliente</a>
                                     <a class="dropdown-item" href="alterarpasse.aspx">Alterar Palavra-Passe</a>
-                                    <a class="dropdown-item" href="enviarprognostico.aspx">Enviar Prognóstico</a>
-                                    <a class="dropdown-item" href="comprarsubscricao.aspx">Comprar Subscrição</a>
-                                    <a class="dropdown-item" href="verclassificacao.aspx">Visualizar Classificação</a>
-                                    <asp:LinkButton ID="lb_sair" class="dropdown-item" runat="server" ForeColor="Red">Sair</asp:LinkButton>
+                                    <asp:LinkButton ID="lb_sair" class="dropdown-item" runat="server" ForeColor="Red" OnClick="lb_sair_Click">Sair</asp:LinkButton>
                                 </div>
                             </div>
                         </li>

@@ -67,12 +67,12 @@
 
                         <asp:Label ID="lbl_enviar_prog_free" runat="server" CssClass="mb-1" Font-Size="Large">
                             <i class="fas fa-envelope" style="font-size: 22px;"></i>
-                            <asp:HyperLink ID="hl_enviar_prog_free" runat="server" NavigateUrl="#" Text="Enviar Prognóstico FREE" Style="text-decoration: none;font-size: 22px;"></asp:HyperLink>
+                            <asp:HyperLink ID="hl_enviar_prog_free" runat="server" NavigateUrl="enviarprog.aspx" Text="Enviar Prognóstico FREE" Style="text-decoration: none;font-size: 22px;"></asp:HyperLink>
                         </asp:Label>
 
                         <asp:Label ID="lbl_enviar_prog_pro" runat="server" CssClass="mb-1" Font-Size="Large">
                             <i class="fas fa-envelope" style="font-size: 22px;"></i>
-                            <asp:HyperLink ID="hl_enviar_prog_pro" runat="server" NavigateUrl="#" Text="Enviar Prognóstico PRO" Style="text-decoration: none;font-size: 22px;"></asp:HyperLink>
+                            <asp:HyperLink ID="hl_enviar_prog_pro" runat="server" NavigateUrl="enviarprog.aspx" Text="Enviar Prognóstico PRO" Style="text-decoration: none;font-size: 22px;"></asp:HyperLink>
                         </asp:Label>
 
                         <asp:Label ID="lbl_comprar_subscricao" runat="server" CssClass="mb-1" Font-Size="Large">
@@ -82,12 +82,12 @@
 
                          <asp:Label ID="lbl_ver_class_free" runat="server" CssClass="mb-1" Font-Size="Large">
                             <i class="fas fa-trophy" style="font-size: 22px;"></i>
-                            <asp:HyperLink ID="hl_ver_class_free" runat="server" NavigateUrl="#" Text="Visualizar Classificação FREE" Style="text-decoration: none;font-size: 22px;"></asp:HyperLink>
+                            <asp:HyperLink ID="hl_ver_class_free" runat="server" NavigateUrl="verclassfree.aspx" Text="Visualizar Classificação FREE" Style="text-decoration: none;font-size: 22px;"></asp:HyperLink>
                         </asp:Label>
 
                          <asp:Label ID="lbl_ver_class_pro" runat="server" CssClass="mb-1" Font-Size="Large">
                             <i class="fas fa-trophy" style="font-size: 22px;"></i>
-                            <asp:HyperLink ID="hl_ver_class_pro" runat="server" NavigateUrl="#" Text="Visualizar Classificação PRO" Style="text-decoration: none;font-size: 22px;"></asp:HyperLink>
+                            <asp:HyperLink ID="hl_ver_class_pro" runat="server" NavigateUrl="verclasspro.aspx" Text="Visualizar Classificação PRO" Style="text-decoration: none;font-size: 22px;"></asp:HyperLink>
                         </asp:Label>
 
                          <asp:Label ID="lbl_criar_liga" runat="server" CssClass="mb-1" Font-Size="Large">

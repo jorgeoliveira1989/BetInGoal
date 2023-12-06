@@ -47,6 +47,8 @@ namespace BetInGoal
                 lbl_nome.Text = "";
                 lbl_email.Text = "";
                 lbl_mensagem.Text = "";
+                lbl_situacao.Text = "";
+                lt_mensagem.Text = "";
                 btn_desativar_mensagem.Enabled = false;
             }
             else

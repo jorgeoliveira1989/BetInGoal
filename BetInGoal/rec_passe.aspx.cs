@@ -4,24 +4,24 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
-using System.Net.Mail;
-using System.Net;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Security.Cryptography;
 
 namespace BetInGoal
 {
-    public partial class recuperarpasse1 : System.Web.UI.Page
+    public partial class rec_passe : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["utilizador"] != null)
             {
-                // A sessão é nula, redireciona para loja_online.aspx
+                // A sessão é nula, redireciona para cliente.aspx
                 Response.Redirect("cliente.aspx");
             }
+
+            lbl_user.Text = DecryptString(Request.QueryString["username"]);
         }
 
         protected void btn_entrar_Click(object sender, EventArgs e)
@@ -34,17 +34,17 @@ namespace BetInGoal
             Response.Redirect("criarconta.aspx");
         }
 
-        protected void btn_recupera_conta_Click(object sender, EventArgs e)
+        protected void btn_recuperarConta_Click(object sender, EventArgs e)
         {
             SqlConnection myconn = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
 
             SqlCommand mycomm = new SqlCommand();
             mycomm.CommandType = CommandType.StoredProcedure;
-            mycomm.CommandText = "verificar_email";
+            mycomm.CommandText = "altera_password_final";
 
             mycomm.Connection = myconn;
-            mycomm.Parameters.AddWithValue("@username", txt_user.Text);
-            mycomm.Parameters.AddWithValue("@email", txt_email.Text);
+            mycomm.Parameters.AddWithValue("@username", lbl_user.Text);
+            mycomm.Parameters.AddWithValue("@passeNova", EncryptString(txt_repnovapasse.Text));
 
             SqlParameter valor = new SqlParameter();
             valor.ParameterName = "@retorno";
@@ -60,36 +60,12 @@ namespace BetInGoal
             myconn.Close();
             if (resposta == 1)
             {
-                lbl_info.Text = "Enviamos um email para efetuar alteração da Palavra Passe!!!";
-
-                SmtpClient servidor = new SmtpClient();
-                MailMessage email = new MailMessage();
-
-                email.From = new MailAddress("Jorge.Vieira.Oliveira@formandos.cinel.pt");
-                email.To.Add(new MailAddress(txt_email.Text));
-                email.Subject = "Recuperação de Palavra Passe!";
-
-                email.IsBodyHtml = true;
-
-                email.Body = "<b>Pediu para recuperar a palavra passe?<br/>Se não pediu ignore o link enviado <br/> Carregue neste link para alterar a palavra passe: <a href='https://localhost:44398/rec_passe.aspx?username=" + EncryptString(txt_user.Text) + "&email=" + EncryptString(txt_email.Text) + "&hora" + EncryptString(DateTime.Now.ToString()) + "'aqui><br/><br/> Sugerimos que altere a sua palavra passe pois é sinal que andam a tentar entrar na sua conta!!!";
-
-                servidor.Host = ConfigurationManager.AppSettings["SMTP_URL"];
-                servidor.Port = int.Parse(ConfigurationManager.AppSettings["SMTP_PORT"]);
-
-
-                string utilizador = ConfigurationManager.AppSettings["SMTP_USER"];
-                string passe = ConfigurationManager.AppSettings["SMTP_PASSWORD"];
-
-                servidor.Credentials = new NetworkCredential(utilizador, passe);
-                servidor.EnableSsl = true;
-
-                servidor.Send(email);
+                lbl_info.Text = "Palavra-Passe alterada!!!";
             }
             else
             {
-                lbl_info.Text = "Username ou email não existem na base de dados!!!";
+                lbl_info.Text = "Palavra-Passe não foi alterada!!";
             }
-
         }
 
         public static string EncryptString(string Message)
@@ -152,6 +128,76 @@ namespace BetInGoal
             enc = enc.Replace("/", "JLJLJL");
             enc = enc.Replace("\\", "IOIOIO");
             return enc;
+        }
+
+
+
+        public static string DecryptString(string Message)
+        {
+            string Passphrase = "cinel";
+            byte[] Results;
+            System.Text.UTF8Encoding UTF8 = new System.Text.UTF8Encoding();
+
+
+
+            // Step 1. We hash the passphrase using MD5
+            // We use the MD5 hash generator as the result is a 128 bit byte array
+            // which is a valid length for the TripleDES encoder we use below
+
+
+
+            MD5CryptoServiceProvider HashProvider = new MD5CryptoServiceProvider();
+            byte[] TDESKey = HashProvider.ComputeHash(UTF8.GetBytes(Passphrase));
+
+
+
+            // Step 2. Create a new TripleDESCryptoServiceProvider object
+            TripleDESCryptoServiceProvider TDESAlgorithm = new TripleDESCryptoServiceProvider();
+
+
+
+            // Step 3. Setup the decoder
+            TDESAlgorithm.Key = TDESKey;
+            TDESAlgorithm.Mode = CipherMode.ECB;
+            TDESAlgorithm.Padding = PaddingMode.PKCS7;
+
+
+
+            // Step 4. Convert the input string to a byte[]
+
+
+
+            Message = Message.Replace("KLKLK", "+");
+            Message = Message.Replace("JLJLJL", "/");
+            Message = Message.Replace("IOIOIO", "\\");
+
+
+
+
+            byte[] DataToDecrypt = Convert.FromBase64String(Message);
+
+
+
+            // Step 5. Attempt to decrypt the string
+            try
+            {
+                ICryptoTransform Decryptor = TDESAlgorithm.CreateDecryptor();
+                Results = Decryptor.TransformFinalBlock(DataToDecrypt, 0, DataToDecrypt.Length);
+            }
+            finally
+            {
+                // Clear the TripleDes and Hashprovider services of any sensitive information
+                TDESAlgorithm.Clear();
+                HashProvider.Clear();
+            }
+
+
+
+            // Step 6. Return the decrypted string in UTF8 format
+            return UTF8.GetString(Results);
+
+
+
         }
     }
 }

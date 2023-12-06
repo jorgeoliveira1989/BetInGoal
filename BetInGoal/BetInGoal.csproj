@@ -2181,6 +2181,7 @@
     <Content Include="noticias.aspx" />
     <Content Include="poli_e_privacidade.aspx" />
     <Content Include="recuperarpasse.aspx" />
+    <Content Include="rec_passe.aspx" />
     <Content Include="suporte.aspx" />
     <Content Include="tickets.aspx" />
     <Content Include="verligas.aspx" />
@@ -2476,6 +2477,13 @@
     </Compile>
     <Compile Include="recuperarpasse.aspx.designer.cs">
       <DependentUpon>recuperarpasse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rec_passe.aspx.cs">
+      <DependentUpon>rec_passe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rec_passe.aspx.designer.cs">
+      <DependentUpon>rec_passe.aspx</DependentUpon>
     </Compile>
     <Compile Include="suporte.aspx.cs">
       <DependentUpon>suporte.aspx</DependentUpon>

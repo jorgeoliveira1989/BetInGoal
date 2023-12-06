@@ -118,7 +118,7 @@ namespace BetInGoal
             //Agora na tabela prognosticos: 
 
             SqlConnection myconn2 = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
-
+  
             // Consulta SQL para obter os campos desejados da tabela prognosticos
             string queryPrognosticos = "SELECT id_jogo,resultadoFinal_casa,resultadoFinal_fora FROM prognosticos where id_jogo='" + id + "'";
 
@@ -181,7 +181,7 @@ namespace BetInGoal
                 int resultadoCasa = Convert.ToInt32(txt_resultado_casa.Text);
                 int resultadoFora = Convert.ToInt32(txt_resultado_fora.Text);
 
-                if(((prognosticoCasa > prognosticoFora && resultadoCasa > resultadoFora && Math.Abs(prognosticoCasa - prognosticoFora) == Math.Abs(resultadoCasa - resultadoFora) && (lbl_jogo_especial.Text== "True"))||(prognosticoCasa < prognosticoFora && resultadoCasa < resultadoFora && Math.Abs(prognosticoCasa - prognosticoFora) == Math.Abs(resultadoCasa - resultadoFora) && lbl_jogo_especial.Text=="True")))
+                if (((prognosticoCasa > prognosticoFora && resultadoCasa > resultadoFora && Math.Abs(prognosticoCasa - prognosticoFora) == Math.Abs(resultadoCasa - resultadoFora) && (lbl_jogo_especial.Text == "True")) || (prognosticoCasa < prognosticoFora && resultadoCasa < resultadoFora && Math.Abs(prognosticoCasa - prognosticoFora) == Math.Abs(resultadoCasa - resultadoFora) && lbl_jogo_especial.Text == "True")))
                 {
                     acertaambosespecialFree = 10;
                     acertaambosespecialPro = 12;
@@ -336,7 +336,102 @@ namespace BetInGoal
                 mycomm4.ExecuteNonQuery();
                 myconn.Close();
 
-                lbl_mensagem.Text = totalpontos.ToString();
+                myconn.Open();
+
+                // Buscar a jornada na tabela jogo usando o id_jogo
+                string queryJornada = "SELECT jornada FROM jogos WHERE id_jogo = @id_jogo";
+                SqlCommand cmdJornada = new SqlCommand(queryJornada, myconn);
+
+                // Adicionar parâmetro para o id_jogo obtido anteriormente
+                cmdJornada.Parameters.AddWithValue("@id_jogo", Convert.ToInt32(Request.QueryString["id_jogo"]));
+
+                // Executar o comando SQL para obter a jornada
+                string jornadaDoJogo = cmdJornada.ExecuteScalar()?.ToString();
+
+                // Agora, buscar o id_cliente na tabela clientes usando o usernamePrognostico
+                string queryCliente2 = "SELECT id_cliente FROM clientes WHERE username = @username";
+                SqlCommand cmdCliente2 = new SqlCommand(queryCliente2, myconn);
+
+                // Adicionar parâmetro para o username obtido anteriormente
+                cmdCliente2.Parameters.AddWithValue("@username", usernamePrognostico);
+
+                // Executar o comando SQL para obter o id_cliente
+                int idCliente2 = Convert.ToInt32(cmdCliente2.ExecuteScalar());
+
+                // Agora, buscar o id_amigo na tabela amigos usando o id_cliente
+                string queryAmigo1 = "SELECT id_amigo FROM amigos WHERE id_cliente = @id_cliente";
+                SqlCommand cmdAmigo1 = new SqlCommand(queryAmigo1, myconn);
+
+                // Adicionar parâmetro para o id_cliente obtido anteriormente
+                cmdAmigo1.Parameters.AddWithValue("@id_cliente", idCliente2);
+
+                // Executar o comando SQL para obter o id_amigo
+                int idAmigo1 = Convert.ToInt32(cmdAmigo1.ExecuteScalar());
+
+                // Agora, verificar se a jornada é a mesma
+                string queryVerificarJornada = "SELECT pontos_jornada FROM pontuacao WHERE id_amigo = @id_amigo AND jornada = @jornada";
+                SqlCommand cmdVerificarJornada = new SqlCommand(queryVerificarJornada, myconn);
+
+                // Adicionar parâmetros para o id_amigo e a jornada obtidos anteriormente
+                cmdVerificarJornada.Parameters.AddWithValue("@id_amigo", idAmigo1);
+                cmdVerificarJornada.Parameters.AddWithValue("@jornada", jornadaDoJogo);
+
+                // Executar o comando SQL para verificar se a jornada já existe na tabela pontuacao
+                object pontosJornadaExistente = cmdVerificarJornada.ExecuteScalar();
+
+                myconn.Close();
+
+                if (pontosJornadaExistente != null)
+                {
+                    // Já existem pontos para esta jornada, então você pode adicionar ou atualizar os pontos existentes.
+                    int pontosJornada = Convert.ToInt32(pontosJornadaExistente);
+
+                    // Verificar se a jornada atual é a mesma que a jornada na tabela pontuacao
+                    if (jornadaDoJogo == lbl_jornada.Text)
+                    {
+                        // A jornada é a mesma, adicione os pontos existentes aos novos pontos
+                        pontosJornada = pontosJornada + totalpontos;
+                    }
+                    else
+                    {
+                        pontosJornada = 0;
+                        // A jornada é diferente, então atualize a tabela pontuacao com os novos pontos e a nova jornada
+                        pontosJornada = pontosJornada + totalpontos;
+                    }
+
+                        SqlCommand mycomm5 = new SqlCommand();
+                        mycomm5.CommandType = CommandType.StoredProcedure;
+                        mycomm5.CommandText = "AtualizarPontosJornada";
+
+                        mycomm5.Connection = myconn;
+                        mycomm5.Parameters.AddWithValue("@id_amigo", idAmigo1);
+                        mycomm5.Parameters.AddWithValue("@jornada", lbl_jornada.Text);
+                        mycomm5.Parameters.AddWithValue("@pontos_jornada", pontosJornada);
+
+                        myconn.Open();
+                        mycomm5.ExecuteNonQuery();
+                        myconn.Close();
+
+                }
+                else
+                {
+                    // Não há pontos para esta jornada, então você pode inserir uma nova entrada na tabela pontuacao.
+                    // Certifique-se de substituir totalpontos pelo valor correto que você deseja adicionar à jornada.
+                    int pontosJornada = totalpontos;
+
+                    SqlCommand mycomm5 = new SqlCommand();
+                    mycomm5.CommandType = CommandType.StoredProcedure;
+                    mycomm5.CommandText = "InserirPontosJornada";
+
+                    mycomm5.Connection = myconn;
+                    mycomm5.Parameters.AddWithValue("@id_amigo", idAmigo1);
+                    mycomm5.Parameters.AddWithValue("@jornada", lbl_jornada.Text);
+                    mycomm5.Parameters.AddWithValue("@pontos_jornada", pontosJornada);
+
+                    myconn.Open();
+                    mycomm5.ExecuteNonQuery();
+                    myconn.Close();
+                }
             }
         }
     }
