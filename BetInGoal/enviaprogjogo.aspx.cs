@@ -49,7 +49,21 @@ namespace BetInGoal
                     lbl_hora.Text = ((TimeSpan)dr["hora_jogo"]).ToString("hh\\:mm");
                     lbl_equipa_casa.Text = dr["equipa_casa"].ToString();
                     lbl_equipa_fora.Text = dr["equipa_fora"].ToString();
-                    lbl_jogo_especial.Text = dr["jogo_estrela_jornada"].ToString();
+                    string valorOriginal = dr["jogo_estrela_jornada"].ToString();
+                    string resultado;
+
+                    if (valorOriginal.ToLower() == "true")
+                    {
+                        resultado = "Sim";
+                    }
+                    else
+                    {
+                        resultado = "Não";
+                    }
+                    
+                    lbl_jogo_especial.Text = resultado;
+
+
                 }
 
                 myconn.Close();

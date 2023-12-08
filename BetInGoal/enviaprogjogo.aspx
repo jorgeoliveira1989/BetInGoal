@@ -62,7 +62,7 @@
                     <asp:Label ID="lbl_equipa_fora" runat="server" Text="" CssClass="form-control"></asp:Label>
                 </div>
                 <div class="col-md-6">
-                    <label>Jogo Especial:</label>
+                    <label>Jogo da Jornada:</label>
                     <asp:Label ID="lbl_jogo_especial" runat="server" CssClass="form-control" Text=""></asp:Label>
                 </div>
             </div>
