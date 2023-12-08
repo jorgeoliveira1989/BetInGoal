@@ -97,6 +97,7 @@
     <Content Include="editarnoticia.aspx" />
     <Content Include="entrar.aspx" />
     <Content Include="entrarliga.aspx" />
+    <Content Include="enviaprogjogo.aspx" />
     <Content Include="enviarprog.aspx" />
     <Content Include="enviarprognostico.aspx" />
     <Content Include="fecharjogo.aspx" />
@@ -2381,6 +2382,13 @@
     </Compile>
     <Compile Include="entrarliga.aspx.designer.cs">
       <DependentUpon>entrarliga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="enviaprogjogo.aspx.cs">
+      <DependentUpon>enviaprogjogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="enviaprogjogo.aspx.designer.cs">
+      <DependentUpon>enviaprogjogo.aspx</DependentUpon>
     </Compile>
     <Compile Include="enviarprog.aspx.cs">
       <DependentUpon>enviarprog.aspx</DependentUpon>
