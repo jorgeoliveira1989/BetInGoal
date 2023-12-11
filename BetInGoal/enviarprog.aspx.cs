@@ -57,7 +57,16 @@ namespace BetInGoal
                         bool valorOriginal = reader.GetBoolean(9);
                         string resultado = valorOriginal ? "Sim" : "Não";
 
-                        lst_jogos.Add(jogo);
+                        // Verifica se falta menos de 2 horas para o jogo começar
+                        DateTime dataHoraJogo = DateTime.ParseExact(jogo.data_jogo + " " + jogo.hora_jogo, "dd/MM/yyyy HH:mm", null);
+                        TimeSpan diferenca = dataHoraJogo - DateTime.Now;
+
+                        // Se a diferença for menor que 2 horas, não adicionar à lista
+                        if (diferenca.TotalHours >= 2)
+                        {
+                            lst_jogos.Add(jogo);
+                        }
+                     
                     }
                 }
 
