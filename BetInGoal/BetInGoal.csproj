@@ -101,6 +101,8 @@
     <Content Include="enviaprogjogo.aspx" />
     <Content Include="enviarprog.aspx" />
     <Content Include="enviarprognostico.aspx" />
+    <Content Include="erro.aspx" />
+    <Content Include="erro404.aspx" />
     <Content Include="fecharjogo.aspx" />
     <Content Include="fecharjogos.aspx" />
     <Content Include="fontawesome\css\all.css" />
@@ -2413,6 +2415,20 @@
     </Compile>
     <Compile Include="enviarprognostico.aspx.designer.cs">
       <DependentUpon>enviarprognostico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro.aspx.cs">
+      <DependentUpon>erro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro.aspx.designer.cs">
+      <DependentUpon>erro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="erro404.aspx.cs">
+      <DependentUpon>erro404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="erro404.aspx.designer.cs">
+      <DependentUpon>erro404.aspx</DependentUpon>
     </Compile>
     <Compile Include="fecharjogo.aspx.cs">
       <DependentUpon>fecharjogo.aspx</DependentUpon>

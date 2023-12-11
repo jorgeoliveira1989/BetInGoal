@@ -48,6 +48,8 @@ namespace BetInGoal
                     jogo.resultado_fora = reader.GetInt32(7);
                     jogo.equipa_fora = reader.GetString(8);
                     jogo.jogo_estrela_jornada = reader.GetBoolean(9);
+                    bool valorOriginal = reader.GetBoolean(9);
+                    string resultado = valorOriginal ? "Sim" : "Não";
 
                     lst_jogos.Add(jogo);
                 }

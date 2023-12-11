@@ -17,7 +17,7 @@ namespace BetInGoal
         {
             if (Session["utilizador"] == null)
             {
-                // A sessão é nula, redireciona para loja_online.aspx
+                // A sessão é nula, redireciona para administrador.aspx
                 Response.Redirect("administrador.aspx");
             }
             else

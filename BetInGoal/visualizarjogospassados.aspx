@@ -40,7 +40,7 @@
                         <td><%# Eval("resultado_casa")%></td>
                         <td><%# Eval("resultado_fora")%></td>
                         <td><%# Eval("equipa_fora")%></td>
-                        <th scope="row"><%# Eval("jogo_estrela_jornada")%></th>
+                         <th scope="row"><%# (bool)Eval("jogo_estrela_jornada") ? "Sim" : "Não" %></th>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>

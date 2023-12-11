@@ -39,7 +39,7 @@
                         <td><%# Eval("resultado_casa")%></td>
                         <td><%# Eval("resultado_fora")%></td>
                         <td><%# Eval("equipa_fora")%></td>
-                        <th scope="row"><%# Eval("jogo_estrela_jornada")%></th>
+                        <th scope="row"><%# (bool)Eval("jogo_estrela_jornada") ? "Sim" : "Não" %></th>
                         <td>
                             <a href="https://localhost:44398/fecharjogos.aspx?id_jogo=<%# Eval("id_jogo")%>">
                                 <button type="button" class="btn btn-dark">Detalhes</button></a>

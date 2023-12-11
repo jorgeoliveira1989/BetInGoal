@@ -61,7 +61,20 @@ namespace BetInGoal
                     lbl_hora.Text = ((TimeSpan)dr["hora_jogo"]).ToString("hh\\:mm");
                     lbl_equipa_casa.Text = dr["equipa_casa"].ToString();
                     lbl_equipa_fora.Text = dr["equipa_fora"].ToString();
-                    lbl_jogo_especial.Text = dr["jogo_estrela_jornada"].ToString();
+                    string valorOriginal = dr["jogo_estrela_jornada"].ToString();
+                    string resultado;
+
+                    if (valorOriginal.ToLower() == "true")
+                    {
+                        resultado = "Sim";
+                    }
+                    else 
+                    {
+                        resultado = "Não";
+                    }
+                    
+
+                    lbl_jogo_especial.Text = resultado;
                 }
 
                 myconn.Close();
@@ -136,7 +149,7 @@ namespace BetInGoal
                 resultadosPrognosticos.Add(new Tuple<int, int>(resultadoFinalCasa, resultadoFinalFora));
             }
 
-            // Certificar de fechar a conexão, mesmo em caso de exceção
+            // fechar a conexão
             myconn2.Close();
 
             SqlConnection myconn = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
@@ -163,9 +176,6 @@ namespace BetInGoal
             int idCliente = Convert.ToInt32(cmdCliente.ExecuteScalar());
 
             myconn.Close();
-
-            // Agora, a variável tipoCliente contém o valor da coluna tipo_cliente da tabela clientes.
-
 
             if (resultadosPrognosticos.Count > 0)
             {
@@ -410,8 +420,8 @@ namespace BetInGoal
                     }
                     else
                     {
-                        // Não há pontos para esta jornada, então você pode inserir uma nova entrada na tabela pontuacao.
-                        // Certifique-se de substituir totalpontos pelo valor correto que você deseja adicionar à jornada.
+                        // Não há pontos para esta jornada, insere uma nova entrada na tabela pontuacao.
+                        // substituir totalpontos pelo valor correto que é para adicionar à jornada.
                         int pontosJornada = totalpontos;
 
                         SqlCommand mycomm5 = new SqlCommand();

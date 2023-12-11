@@ -57,7 +57,7 @@
                     <asp:TextBox ID="txt_equipa_fora" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
-                    <label>Jogo Especial:</label>
+                    <label>Jogo da Jornada:</label>
                     <asp:CheckBox ID="ckb_jogoEspecial" runat="server" />
                 </div>
             </div>

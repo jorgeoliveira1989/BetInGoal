@@ -17,7 +17,7 @@ namespace BetInGoal
         {
             if (Session["utilizador"] == null)
             {
-                // A sessão é nula, redireciona para loja_online.aspx
+                // A sessão é nula, redireciona para administrador.aspx
                 Response.Redirect("administrador.aspx");
             }
             else
@@ -49,8 +49,10 @@ namespace BetInGoal
                         jogo.resultado_fora = reader.GetInt32(7);
                         jogo.equipa_fora = reader.GetString(8);
                         jogo.jogo_estrela_jornada = reader.GetBoolean(9);
+                        bool valorOriginal = reader.GetBoolean(9);
+                        string resultado = valorOriginal ? "Sim" : "Não";
 
-                        lst_jogos.Add(jogo);
+                    lst_jogos.Add(jogo);
                     }
 
                     myconn.Close();
