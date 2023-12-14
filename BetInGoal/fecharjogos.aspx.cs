@@ -68,11 +68,11 @@ namespace BetInGoal
                     {
                         resultado = "Sim";
                     }
-                    else 
+                    else
                     {
                         resultado = "Não";
                     }
-                    
+
 
                     lbl_jogo_especial.Text = resultado;
                 }
@@ -83,7 +83,7 @@ namespace BetInGoal
 
         protected void btn_fechar_jogo_Click(object sender, EventArgs e)
         {
-            
+
             SqlConnection myconn1 = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
 
             SqlCommand mycomm1 = new SqlCommand();
@@ -120,19 +120,17 @@ namespace BetInGoal
                 lbl_mensagem.Text = "Não foi atualizado o resultado final";
             }
 
-            //-------------------------//
             //Agora na tabela prognosticos: 
-
             SqlConnection myconn2 = new SqlConnection(ConfigurationManager.ConnectionStrings["BetinGoalConnectionString"].ConnectionString);
-  
+
             // Consulta SQL para obter os campos desejados da tabela prognosticos
-            string queryPrognosticos = "SELECT id_jogo,resultadoFinal_casa,resultadoFinal_fora FROM prognosticos where id_jogo='" + id + "'";
+            string queryPrognosticos = "SELECT id_jogo,id_cliente,resultadoFinal_casa,resultadoFinal_fora FROM prognosticos where id_jogo='" + id + "'";
 
             // Criar comando SQL com a consulta e a conexão
             SqlCommand cmdPrognosticos = new SqlCommand(queryPrognosticos, myconn2);
 
             // Lista para armazenar os resultados
-            List<Tuple<int, int>> resultadosPrognosticos = new List<Tuple<int, int>>();
+            List<Tuple<int, int, int>> resultadosPrognosticos = new List<Tuple<int, int, int>>();
 
 
             // Abrir a conexão
@@ -144,9 +142,10 @@ namespace BetInGoal
             // Ler os resultados e armazenar na lista
             while (reader.Read())
             {
+                int idcliente = Convert.ToInt32(reader["id_cliente"]);
                 int resultadoFinalCasa = Convert.ToInt32(reader["resultadoFinal_casa"]);
                 int resultadoFinalFora = Convert.ToInt32(reader["resultadoFinal_fora"]);
-                resultadosPrognosticos.Add(new Tuple<int, int>(resultadoFinalCasa, resultadoFinalFora));
+                resultadosPrognosticos.Add(new Tuple<int, int, int>(idcliente, resultadoFinalCasa, resultadoFinalFora));
             }
 
             // fechar a conexão
@@ -165,7 +164,7 @@ namespace BetInGoal
             // Executar o comando SQL para obter o username
             string usernamePrognostico = cmdPrognostico.ExecuteScalar()?.ToString();
 
-            // Agora, buscar o id_cliente na tabela clientes usando o usernamePrognostico
+            // Agora buscar o id_cliente na tabela clientes usando o usernamePrognostico
             string queryCliente = "SELECT id_cliente FROM clientes WHERE username = @username";
             SqlCommand cmdCliente = new SqlCommand(queryCliente, myconn);
 
@@ -173,7 +172,7 @@ namespace BetInGoal
             cmdCliente.Parameters.AddWithValue("@username", usernamePrognostico);
 
             // Executar o comando SQL para obter o id_cliente
-            int idCliente = Convert.ToInt32(cmdCliente.ExecuteScalar());
+            //int idCliente = Convert.ToInt32(cmdCliente.ExecuteScalar());
 
             myconn.Close();
 
@@ -181,8 +180,13 @@ namespace BetInGoal
             {
                 foreach (var resultado in resultadosPrognosticos)
                 {
-                    int prognosticoCasa = resultadosPrognosticos[0].Item1;
-                    int prognosticoFora = resultadosPrognosticos[0].Item2;
+
+                    //int prognosticoCasa = resultadosPrognosticos[0].Item1;
+                    //procurar mais de uma linha na tabela
+                    int idcliente = resultado.Item1;
+                    int prognosticoCasa = resultado.Item2;
+                    int prognosticoFora = resultado.Item3;
+                    //int prognosticoFora = resultadosPrognosticos[0].Item2;
                     int resultadoCasa = Convert.ToInt32(txt_resultado_casa.Text);
                     int resultadoFora = Convert.ToInt32(txt_resultado_fora.Text);
 
@@ -197,7 +201,7 @@ namespace BetInGoal
 
                         mycomm.Connection = myconn;
 
-                        mycomm.Parameters.AddWithValue("@id_cliente", idCliente);
+                        mycomm.Parameters.AddWithValue("@id_cliente", idcliente);
                         mycomm.Parameters.AddWithValue("@id_jogo", Convert.ToInt32(Request.QueryString["id_jogo"]));
                         mycomm.Parameters.AddWithValue("@acertaambosespecialfree", acertaambosespecialFree);
                         mycomm.Parameters.AddWithValue("@acertaambosespecialpro", acertaambosespecialPro);
@@ -219,7 +223,7 @@ namespace BetInGoal
 
                         mycomm.Connection = myconn;
 
-                        mycomm.Parameters.AddWithValue("@id_cliente", idCliente);
+                        mycomm.Parameters.AddWithValue("@id_cliente", idcliente);
                         mycomm.Parameters.AddWithValue("@id_jogo", Convert.ToInt32(Request.QueryString["id_jogo"]));
                         mycomm.Parameters.AddWithValue("@acertaambosfree", acertaambosFree);
                         mycomm.Parameters.AddWithValue("@acertaambospro", acertaambosPro);
@@ -241,7 +245,7 @@ namespace BetInGoal
 
                         mycomm.Connection = myconn;
 
-                        mycomm.Parameters.AddWithValue("@id_cliente", idCliente);
+                        mycomm.Parameters.AddWithValue("@id_cliente", idcliente);
                         mycomm.Parameters.AddWithValue("@id_jogo", Convert.ToInt32(Request.QueryString["id_jogo"]));
                         mycomm.Parameters.AddWithValue("@quantidadegolosfree", quantidadeGolosFree);
                         mycomm.Parameters.AddWithValue("@quantidadegolospro", quantidadeGolosPro);
@@ -263,7 +267,7 @@ namespace BetInGoal
 
                         mycomm.Connection = myconn;
 
-                        mycomm.Parameters.AddWithValue("@id_cliente", idCliente);
+                        mycomm.Parameters.AddWithValue("@id_cliente", idcliente);
                         mycomm.Parameters.AddWithValue("@id_jogo", Convert.ToInt32(Request.QueryString["id_jogo"]));
                         mycomm.Parameters.AddWithValue("@resultadocertofree", resultadocertoFree);
                         mycomm.Parameters.AddWithValue("@resultadocertopro", resultadocertoPro);
@@ -275,15 +279,17 @@ namespace BetInGoal
 
                     myconn.Open();
 
-                    // Agora, buscar o id_cliente na tabela clientes usando o usernamePrognostico
-                    string queryCliente1 = "SELECT id_cliente FROM clientes WHERE username = @username";
-                    SqlCommand cmdCliente1 = new SqlCommand(queryCliente1, myconn);
+                    //// Agora, buscar o id_cliente na tabela clientes usando o usernamePrognostico
+                    //string queryCliente1 = "SELECT id_cliente FROM clientes WHERE username = @username";
+                    //SqlCommand cmdCliente1 = new SqlCommand(queryCliente1, myconn);
 
-                    // Adicionar parâmetro para o username obtido anteriormente
-                    cmdCliente1.Parameters.AddWithValue("@username", usernamePrognostico);
+                    //// Adicionar parâmetro para o username obtido anteriormente
+                    //cmdCliente1.Parameters.AddWithValue("@username", usernamePrognostico);
 
-                    // Executar o comando SQL para obter o id_cliente
-                    int idCliente1 = Convert.ToInt32(cmdCliente1.ExecuteScalar());
+                    //// Executar o comando SQL para obter o id_cliente
+                    //int idCliente1 = Convert.ToInt32(cmdCliente1.ExecuteScalar());
+
+                    int idCliente1 = idcliente;
 
                     // Agora, buscar o id_amigo na tabela amigos usando o id_cliente
                     string queryAmigo = "SELECT id_amigo FROM amigos WHERE id_cliente = @id_cliente";
@@ -343,25 +349,42 @@ namespace BetInGoal
 
                     myconn.Open();
 
+                    //// Buscar a jornada na tabela jogo usando o id_jogo
+                    //string queryJornada = "SELECT jornada FROM jogos WHERE id_jogo = @id_jogo";
+                    //SqlCommand cmdJornada = new SqlCommand(queryJornada, myconn);
+
+                    //// Adicionar parâmetro para o id_jogo obtido anteriormente
+                    //cmdJornada.Parameters.AddWithValue("@id_jogo", Convert.ToInt32(Request.QueryString["id_jogo"]));
+
+                    //// Executar o comando SQL para obter a jornada
+                    //string jornadaDoJogo = cmdJornada.ExecuteScalar()?.ToString();
+
+                    //editado
+
                     // Buscar a jornada na tabela jogo usando o id_jogo
-                    string queryJornada = "SELECT jornada FROM jogos WHERE id_jogo = @id_jogo";
+                    string queryJornada = "SELECT jornada FROM pontuacao WHERE id_amigo = @id_amigo";
                     SqlCommand cmdJornada = new SqlCommand(queryJornada, myconn);
 
                     // Adicionar parâmetro para o id_jogo obtido anteriormente
-                    cmdJornada.Parameters.AddWithValue("@id_jogo", Convert.ToInt32(Request.QueryString["id_jogo"]));
+                    cmdJornada.Parameters.AddWithValue("@id_amigo", Convert.ToInt32(Request.QueryString["id_amigo"]));
 
                     // Executar o comando SQL para obter a jornada
                     string jornadaDoJogo = cmdJornada.ExecuteScalar()?.ToString();
 
-                    // Agora, buscar o id_cliente na tabela clientes usando o usernamePrognostico
-                    string queryCliente2 = "SELECT id_cliente FROM clientes WHERE username = @username";
-                    SqlCommand cmdCliente2 = new SqlCommand(queryCliente2, myconn);
 
-                    // Adicionar parâmetro para o username obtido anteriormente
-                    cmdCliente2.Parameters.AddWithValue("@username", usernamePrognostico);
+                    /// fim da edição
 
-                    // Executar o comando SQL para obter o id_cliente
-                    int idCliente2 = Convert.ToInt32(cmdCliente2.ExecuteScalar());
+                    //// Agora, buscar o id_cliente na tabela clientes usando o usernamePrognostico
+                    //string queryCliente2 = "SELECT id_cliente FROM clientes WHERE username = @username";
+                    //SqlCommand cmdCliente2 = new SqlCommand(queryCliente2, myconn);
+
+                    //// Adicionar parâmetro para o username obtido anteriormente
+                    //cmdCliente2.Parameters.AddWithValue("@username", usernamePrognostico);
+
+                    //// Executar o comando SQL para obter o id_cliente
+                    //int idCliente2 = Convert.ToInt32(cmdCliente2.ExecuteScalar());
+
+                    int idCliente2 = idcliente;
 
                     // Agora, buscar o id_amigo na tabela amigos usando o id_cliente
                     string queryAmigo1 = "SELECT id_amigo FROM amigos WHERE id_cliente = @id_cliente";
@@ -374,12 +397,12 @@ namespace BetInGoal
                     int idAmigo1 = Convert.ToInt32(cmdAmigo1.ExecuteScalar());
 
                     // Agora, verificar se a jornada é a mesma
-                    string queryVerificarJornada = "SELECT pontos_jornada FROM pontuacao WHERE id_amigo = @id_amigo AND jornada = @jornada";
+                    string queryVerificarJornada = "SELECT pontos_jornada FROM pontuacao WHERE id_amigo = @id_amigo";
                     SqlCommand cmdVerificarJornada = new SqlCommand(queryVerificarJornada, myconn);
 
                     // Adicionar parâmetros para o id_amigo e a jornada obtidos anteriormente
                     cmdVerificarJornada.Parameters.AddWithValue("@id_amigo", idAmigo1);
-                    cmdVerificarJornada.Parameters.AddWithValue("@jornada", jornadaDoJogo);
+                    //cmdVerificarJornada.Parameters.AddWithValue("@jornada", jornadaDoJogo);
 
                     // Executar o comando SQL para verificar se a jornada já existe na tabela pontuacao
                     object pontosJornadaExistente = cmdVerificarJornada.ExecuteScalar();
@@ -388,20 +411,36 @@ namespace BetInGoal
 
                     if (pontosJornadaExistente != null)
                     {
-                        // Já existem pontos para esta jornada, então você pode adicionar ou atualizar os pontos existentes.
+                        // Já existem pontos para esta jornada, então adiciona ou atualizar os pontos existentes.
                         int pontosJornada = Convert.ToInt32(pontosJornadaExistente);
 
                         // Verificar se a jornada atual é a mesma que a jornada na tabela pontuacao
                         if (jornadaDoJogo == lbl_jornada.Text)
                         {
-                            // A jornada é a mesma, adicione os pontos existentes aos novos pontos
-                            pontosJornada = pontosJornada + totalpontos;
+                            //A jornada é a mesma então adiciona os pontos existentes aos pontos que já possuem
+                            if (tipoCliente == "FREE")
+                            {
+                                pontosJornada = pontosJornada + resultadocertoFree + quantidadeGolosFree + acertaambosFree + acertaambosespecialFree;
+                            }
+                            else if (tipoCliente == "PRO")
+                            {
+                                pontosJornada = pontosJornada + resultadocertoPro + quantidadeGolosPro + acertaambosPro + acertaambosespecialPro;
+                            }
+
                         }
                         else
                         {
                             pontosJornada = 0;
-                            // A jornada é diferente, então atualize a tabela pontuacao com os novos pontos e a nova jornada
-                            pontosJornada = pontosJornada + totalpontos;
+                            // A jornada é diferente, então atualiza a tabela pontuacao com os novos pontos e a nova jornada
+
+                            if (tipoCliente == "FREE")
+                            {
+                                pontosJornada = pontosJornada + resultadocertoFree + quantidadeGolosFree + acertaambosFree + acertaambosespecialFree;
+                            }
+                            else if (tipoCliente == "PRO")
+                            {
+                                pontosJornada = pontosJornada + resultadocertoPro + quantidadeGolosPro + acertaambosPro + acertaambosespecialPro;
+                            }
                         }
 
                         SqlCommand mycomm5 = new SqlCommand();
@@ -438,6 +477,10 @@ namespace BetInGoal
                         myconn.Close();
                     }
                 }
+            }
+            else
+            {
+                lbl_mensagem.Text = "Não existem Prognosticos para calcular...";
             }
         }
     }
